@@ -7,8 +7,9 @@
 }
 
 :root {
+    --gradient-light: linear-gradient(-45deg, #b6ad90, #a68a64, #a4ac86, #936639);
+    --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #a4ac86);
   color-scheme: light dark;
-
   --color-background: #233831;
   --color-body-text: #c2c5aa;
   --color-hero-text: #b6ad90;
@@ -27,7 +28,29 @@
 }
 
 body {
-  background-color: light-dark(var(--color-6), var(--color-background));
+  background: var(--gradient-light);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--gradient-dark);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+    }
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    } 
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
