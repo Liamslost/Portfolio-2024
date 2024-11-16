@@ -7,30 +7,92 @@
 }
 
 :root {
-  --color-background: hsla(158, 23%, 18%, 1);
-  --color-body-text: (rgb(87, 153, 0));
-  --color-hero-text: (rgb(227, 252, 142));
+  color-scheme: light dark;
+
+  --color-background: #233831;
+  --color-body-text: #c2c5aa;
+  --color-hero-text: #b6ad90;
+  --color-navbar-bg :#c2c5aab5;
+  --color-1: #3f230b;
+  --color-2: #5a3819;
+  --color-3: #936639;
+  --color-4: #a68a64;
+  --color-5: #b6ad90;
+  --color-6: #c2c5aa;
+  --color-7: #a4ac86;
+  --color-8: #656d4a;
+  --color-9: #414833;
+  --color-10: #333d29;
+  --font-h1: clamp(3.2rem, 0.5781rem + 8.2vw, 13.75rem);
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: light-dark(var(--color-6), var(--color-background));
+}
+
+h1 {
+  font-size: var(--font-h1);
+  color: var(--color-hero-text);
+  letter-spacing: -5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  top: 40px;
+  z-index: 10;
+  width: 100%;
+}
+
+#nav {
+  transition: background-color 0.2s ease
 }
 
 .nav {
-  border: 3px solid;
+  height: 80px;
+  width: 1050px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  border-radius: 40px;
+  
 
   ul {
-    border: 4px solid blue;
+    color: var(--color-7);
+
     width: 1000px;
-    margin: 0 auto;
+    margin: 10px auto 10px auto;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+
+    a:active {
+      color: var(--color-1);
+      background-color: var(--color-5);
+    }
   }
+
   img {
-    height: 50px;
+    height: 40px;
+    margin: 0 1rem;
+    filter: opacity(0.5);
   }
 }
+
+.navTab {
+  width: 175px;
+  padding: 12px 0;
+  background-color: #656d4a;
+  border-radius: 20px;
+  text-align: center;
+
+  li {
+    margin: 0 auto;
+  }
+}
+
 .hero {
   color: var(--color-hero-text);
   height: 100vh;
@@ -38,33 +100,55 @@ body {
   text-align: center;
   margin: 0 auto;
   line-height: 1.25;
-  padding-top: 30vh;
+  padding-top: 12rem;
+}
 
-  h1 {
-    font-size: 150px;
-  }
-  h2 {
-    font-size: 100px;
-  }
+.projectsCounterContainer {
+  width: 800px;
+  padding-top: 2rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
 }
 
 .projectsContainer {
-  border: 3px solid white;
   width: 100%;
+  position: relative;
+  top: -175px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.tile {
+  border-radius: 50px;
 }
 
 .tile1 {
-
+  background-color: var(--color-9);
+  height: 400px;
+  width: 600px;
 }
 
 .tile2 {
-    
+  background-color: var(--color-8);
+  height: 800px;
+  width: 800px;
 }
 
 .tile3 {
-    
+  background-color: var(--color-4);
+  height: 700px;
+  width: 900px;
 }
 
 .tile4 {
-    
+  background-color: var(--color-1);
+  height: 600px;
+  width: 400px;
+}
+
+.inProgress {
+  text-align: center;
 }

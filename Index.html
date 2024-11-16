@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <head>
-  <title></title>
-  <link href="styles.css" rel="stylesheet">
+  <title>Liam O'Connell</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="modern-normalize.css" />
+  <link rel="icon" type="image/x-icon" href="Images/three-leafed.svg" />
   <script src="script.js" defer></script>
 </head>
-<header></header>
-<nav class="nav">
-  <ul>
-    <a><li>Home</li></a>
-    <a><li>Projects</li></a>
-    <a><li><img src="Images/lost-logo.png" /></li></a>
-    <a><li>About</li></a>
-    <a><li>Contact</li></a>
-  </ul>
-</nav>
+<header>
+  <nav class="nav" id="nav">
+    <ul>
+      <a class="navTab"><li>Home</li></a>
+      <a class="navTab" href="#projects"><li>Projects</li></a>
+      <li>
+        <a href="https://github.com/Liamslost" target="_blank">
+          <img src="Images/GitHub_Logo_White.png">
+        </a>
+        <a href="https://www.linkedin.com/in/liam-o-connell-409243190/" target="_blank">
+          <img src="Images/linkedin.svg" />
+        </a>
+      </li>
+      <a class="navTab"><li>About</li></a>
+      <a class="navTab"><li>Contact</li></a>
+    </ul>
+  </nav>
+</header>
 <body>
-    <div class="hero">
-      <h1>Hi. My name is Liam</h1>
-      <h2>A Web Developer.</h2>
+  <div class="hero">
+    <h1>Hi. My name is Liam <br />A Web Developer.</h1>
+    <div id="projects" class="projectsCounterContainer">
+      <h2>Projects live X</h2>
+      <h2>In progress X</h2>
     </div>
+  </div>
   <section class="projectsContainer">
-<div class="tile1"></div>
-<div class="tile2"></div>
-<div class="tile3"></div>
-<div class="tile4"></div>
+    <div class="tile tile1"></div>
+    <div class="tile tile2"></div>
+    <div class="tile tile3"></div>
+    <div class="tile tile4"></div>
+  </section>
+  <section class="inProgress">
+    <h1>In Progress</h1>
+    <div class="tile tile5"></div>
+    <div class="tile tile6"></div>
+    <div class="tile tile7"></div>
+    <div class="tile tile8"></div>
   </section>
 </body>
 <footer></footer>
