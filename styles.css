@@ -9,7 +9,7 @@
 :root {
   color-scheme: light dark;
   --gradient-light: linear-gradient(-45deg, #b6ad90, #a68a64, #a4ac86, #936639);
-  --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #3f230b);
+  --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #b6ad90);
   --color-projects-bg-dark: linear-gradient(
     180deg,
     #41483300 0%,
@@ -57,7 +57,19 @@ body {
   }
 
   .hero {
-    color: var(--color-hero-text)
+    color: var(--color-hero-text);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--gradient-light);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
+
+  .hero {
+    color: var(--color-2);
   }
 }
 
@@ -71,11 +83,6 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-h1 {
-  font-size: var(--font-h1);
-  letter-spacing: -5px;
 }
 
 a {
@@ -134,14 +141,16 @@ header {
 }
 
 .hero {
-  background: var(--color-hero-bg);
-  color: var(--color-2);
   height: 100vh;
   width: 99vw;
   text-align: center;
   margin: 0 auto;
   line-height: 1.25;
   padding-top: 12rem;
+  h1 {
+    font-size: var(--font-h1);
+    letter-spacing: -5px;
+  }
 }
 
 .projectsCounterContainer {
@@ -170,6 +179,7 @@ header {
 }
 
 .tile1 {
+  font-size: 1rem;
   background-color: var(--color-6);
   height: 400px;
   width: 600px;
@@ -196,4 +206,32 @@ header {
 
 .inProgress {
   text-align: center;
+  display: grid;
+  grid-template-columns: (1fr, 1fr);
+  gap: 20px;
+}
+
+.progress1 {
+  background-color: var(--color-6);
+  height: 800px;
+  width: 400px;
+  z-index: 5;
+}
+
+.progress2 {
+  background-color: var(--color-2);
+  height: 400px;
+  width: 400px;
+}
+
+.progress3 {
+  background-color: var(--color-4);
+  height: 400px;
+  width: 400px;
+}
+
+.progress4 {
+  background-color: var(--color-1);
+  height: 400px;
+  width: 800px;
 }
