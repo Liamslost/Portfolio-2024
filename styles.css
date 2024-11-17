@@ -7,17 +7,19 @@
 }
 
 :root {
-    --gradient-light: linear-gradient(-45deg, #b6ad90, #a68a64, #a4ac86, #936639);
-    --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #a4ac86);
-  color-scheme: light dark;
+    color-scheme: light dark;
+  --gradient-light: linear-gradient(-45deg, #b6ad90, #a68a64, #a4ac86, #936639);
+  --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #3f230b);
+  --color-projects-bg-dark:linear-gradient(180deg, #41483300 0%, #414833e6 80%, #414833 100%);
+  --color-projects-bg-light:linear-gradient(180deg, #b6ad9000 0%, #b6ad90e5 10%, #b6ad90 100%);
   --color-background: #233831;
   --color-body-text: #c2c5aa;
   --color-hero-text: #b6ad90;
-  --color-navbar-bg :#c2c5aab5;
-  --color-1: #3f230b;
-  --color-2: #5a3819;
-  --color-3: #936639;
-  --color-4: #a68a64;
+  --color-navbar-bg: #c2c5aab5;
+  --color-1: #2E1A08;
+  --color-2: #382410;
+  --color-3: #533A21;
+  --color-4: #6D5B43;
   --color-5: #b6ad90;
   --color-6: #c2c5aa;
   --color-7: #a4ac86;
@@ -27,6 +29,10 @@
   --font-h1: clamp(3.2rem, 0.5781rem + 8.2vw, 13.75rem);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--gradient-light);
   background-size: 400% 400%;
@@ -34,28 +40,28 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background: var(--gradient-dark);
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
-    }
+  body {
+    background: var(--gradient-dark);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
 }
 
 @keyframes gradient {
-    0%{
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    } 
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
   font-size: var(--font-h1);
-  color: var(--color-hero-text);
+  /* color: var(--color-hero-text); */
   letter-spacing: -5px;
 }
 
@@ -71,7 +77,7 @@ header {
 }
 
 #nav {
-  transition: background-color 0.2s ease
+  transition: background-color 0.2s ease;
 }
 
 .nav {
@@ -80,11 +86,9 @@ header {
   margin: 0 auto;
   padding: 10px 10px;
   border-radius: 40px;
-  
 
   ul {
     color: var(--color-7);
-
     width: 1000px;
     margin: 10px auto 10px auto;
     list-style-type: none;
@@ -100,7 +104,7 @@ header {
   img {
     height: 40px;
     margin: 0 1rem;
-    filter: opacity(0.5);
+    filter: opacity(0.6);
   }
 }
 
@@ -117,7 +121,8 @@ header {
 }
 
 .hero {
-  color: var(--color-hero-text);
+  background: var(--color-hero-bg);
+  color: light-dark(var(--color-4), var(--color-hero-text));
   height: 100vh;
   width: 99vw;
   text-align: center;
@@ -136,8 +141,10 @@ header {
 
 .projectsContainer {
   width: 100%;
+  background: light dark (var(--color-projects-bg-light), var(--color-projects-bg-dark));
   position: relative;
-  top: -175px;
+  top: -150px;
+  z-index: 5;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -149,13 +156,14 @@ header {
 }
 
 .tile1 {
-  background-color: var(--color-9);
+  background-color: var(--color-6);
   height: 400px;
   width: 600px;
+  z-index: 5;
 }
 
 .tile2 {
-  background-color: var(--color-8);
+  background-color: var(--color-2);
   height: 800px;
   width: 800px;
 }
