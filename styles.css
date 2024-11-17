@@ -7,19 +7,29 @@
 }
 
 :root {
-    color-scheme: light dark;
+  color-scheme: light dark;
   --gradient-light: linear-gradient(-45deg, #b6ad90, #a68a64, #a4ac86, #936639);
   --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #3f230b);
-  --color-projects-bg-dark:linear-gradient(180deg, #41483300 0%, #414833e6 80%, #414833 100%);
-  --color-projects-bg-light:linear-gradient(180deg, #b6ad9000 0%, #b6ad90e5 10%, #b6ad90 100%);
+  --color-projects-bg-dark: linear-gradient(
+    180deg,
+    #41483300 0%,
+    #414833e6 80%,
+    #414833 100%
+  );
+  --color-projects-bg-light: linear-gradient(
+    180deg,
+    #b6ad9000 0%,
+    #b6ad90e5 10%,
+    #b6ad90 100%
+  );
   --color-background: #233831;
   --color-body-text: #c2c5aa;
   --color-hero-text: #b6ad90;
   --color-navbar-bg: #c2c5aab5;
-  --color-1: #2E1A08;
+  --color-1: #2e1a08;
   --color-2: #382410;
-  --color-3: #533A21;
-  --color-4: #6D5B43;
+  --color-3: #533a21;
+  --color-4: #6d5b43;
   --color-5: #b6ad90;
   --color-6: #c2c5aa;
   --color-7: #a4ac86;
@@ -45,6 +55,10 @@ body {
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
   }
+
+  .hero {
+    color: var(--color-hero-text)
+  }
 }
 
 @keyframes gradient {
@@ -61,7 +75,6 @@ body {
 
 h1 {
   font-size: var(--font-h1);
-  /* color: var(--color-hero-text); */
   letter-spacing: -5px;
 }
 
@@ -122,7 +135,7 @@ header {
 
 .hero {
   background: var(--color-hero-bg);
-  color: light-dark(var(--color-4), var(--color-hero-text));
+  color: var(--color-2);
   height: 100vh;
   width: 99vw;
   text-align: center;
@@ -134,14 +147,15 @@ header {
 .projectsCounterContainer {
   width: 800px;
   padding-top: 2rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   display: flex;
   justify-content: space-around;
 }
 
 .projectsContainer {
   width: 100%;
-  background: light dark (var(--color-projects-bg-light), var(--color-projects-bg-dark));
+  background: light dark
+    (var(--color-projects-bg-light), var(--color-projects-bg-dark));
   position: relative;
   top: -150px;
   z-index: 5;
