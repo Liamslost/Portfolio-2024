@@ -5,38 +5,79 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 40%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 :root {
-  color-scheme: light dark;
-  --gradient-light: linear-gradient(-45deg, #b6ad90, #a68a64, #a4ac86, #936639);
-  --gradient-dark: linear-gradient(-45deg, #333d29, #414833, #656d4a, #b6ad90);
-  --color-projects-bg-dark: linear-gradient(
+  --gradient-light: radial-gradient(
+    #b6ad90,
+    #8e618f,
+    #4caca7,
+    #a4ac86
+  );
+  --gradient-dark: radial-gradient(
+    #333d29,
+    #656d4a,
+    #3a3348,
+    #4caca7
+  );
+  --color-hero-bg-dark: linear-gradient(
     180deg,
     #41483300 0%,
-    #414833e6 80%,
+    #4148337c 20%,
     #414833 100%
   );
-  --color-projects-bg-light: linear-gradient(
+  --color-hero-bg-light: linear-gradient(
     180deg,
     #b6ad9000 0%,
-    #b6ad90e5 10%,
+    #b6ad9081 10%,
     #b6ad90 100%
+  );
+  --color-projects-bg-dark: linear-gradient(180deg, #414833 0%, #333d29 100%);
+
+  --color-projects-bg-light: linear-gradient(
+    0deg,
+    rgba(128, 107, 80, 1) 0%,
+    rgba(182, 173, 144, 1) 100%
+  );
+  --color-progress-bg-dark: linear-gradient(
+    180deg,
+    rgba(51, 61, 41, 1) 0%,
+    rgba(65, 72, 51, 1) 50%,
+    rgba(101, 109, 74, 1) 100%
+  );
+  --color-progress-bg-light: linear-gradient(
+    180deg,
+    rgba(128, 107, 80, 1) 39%,
+    rgba(101, 109, 74, 1) 100%
   );
   --color-background: #233831;
   --color-body-text: #c2c5aa;
-  --color-hero-text: #b6ad90;
+  --color-hero-text: #c2c5aa;
+  /* #b6ad90; */
   --color-navbar-bg: #c2c5aab5;
-  --color-1: #2e1a08;
-  --color-2: #382410;
-  --color-3: #533a21;
-  --color-4: #6d5b43;
-  --color-5: #b6ad90;
+  --color-1: #1f1206;
+  --color-2: #21150a;
+  --color-3: #302113;
+  --color-4: #504230;
+  --color-5: #a89f83;
   --color-6: #c2c5aa;
   --color-7: #a4ac86;
   --color-8: #656d4a;
   --color-9: #414833;
   --color-10: #333d29;
   --font-h1: clamp(3.2rem, 0.5781rem + 8.2vw, 13.75rem);
+  --font-h2: clamp(3rem, 0.5781rem + 8.2vw, 4rem);
+  --font-h3: clamp(1rem, 0.5781rem + 8.2vw, 3rem);
 }
 
 html {
@@ -44,49 +85,51 @@ html {
 }
 
 body {
-  background: var(--gradient-light);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     background: var(--gradient-dark);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 20s ease-in-out infinite;
   }
 
   .hero {
     color: var(--color-hero-text);
+    background: var(--color-hero-bg-dark);
+  }
+  .projectsContainer {
+    background: var(--color-projects-bg-dark);
+  }
+  .inProgress {
+    background: var(--color-progress-bg-dark);
   }
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background: var(--gradient-light);
-    background-size: 400% 400%;
+    background-size: 400% 200%;
     animation: gradient 10s ease infinite;
   }
 
   .hero {
     color: var(--color-2);
+    background: var(--color-hero-bg-light);
   }
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+  .projectsContainer {
+    background: var(--color-projects-bg-light);
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  .inProgress {
+    background: var(--color-progress-bg-light);
   }
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 header {
@@ -102,14 +145,15 @@ header {
 
 .nav {
   height: 80px;
-  width: 1050px;
+  width: 950px;
   margin: 0 auto;
   padding: 10px 10px;
   border-radius: 40px;
+  backdrop-filter: blur(5px);
 
   ul {
     color: var(--color-7);
-    width: 1000px;
+    width: 100%;
     margin: 10px auto 10px auto;
     list-style-type: none;
     display: flex;
@@ -131,7 +175,7 @@ header {
 .navTab {
   width: 175px;
   padding: 12px 0;
-  background-color: #656d4a;
+  background-color: var(--color-background);
   border-radius: 20px;
   text-align: center;
 
@@ -141,15 +185,19 @@ header {
 }
 
 .hero {
-  height: 100vh;
-  width: 99vw;
+  height: 80vh;
+  width: 100vw;
   text-align: center;
   margin: 0 auto;
   line-height: 1.25;
-  padding-top: 12rem;
+  padding-top: 10rem;
+
   h1 {
     font-size: var(--font-h1);
     letter-spacing: -5px;
+  }
+  h2 {
+    font-size: var(--font-h2);
   }
 }
 
@@ -159,79 +207,137 @@ header {
   margin: 1rem auto;
   display: flex;
   justify-content: space-around;
+
+  h3 {
+    color: var(--color-5);
+    font-size: 1.5rem;
+  }
 }
 
 .projectsContainer {
   width: 100%;
-  background: light dark
-    (var(--color-projects-bg-light), var(--color-projects-bg-dark));
-  position: relative;
-  top: -150px;
   z-index: 5;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 64px;
 }
+
+.placment {
+  height: 100%;
+  width: 50%;
+  padding-top: 7rem;
+  margin-left: 3rem;
+}
+
+.projectsImageContainer {
+  img {
+    filter: saturate(100%);
+    border-radius: 1rem;
+  }
+}
+
+/* .projectTitle {
+  text-align: right;
+  margin-right: 2rem;
+  h1 {
+    font-weight: 200;
+    letter-spacing: -1px;
+  }
+  h2 {
+  }
+} */
 
 .tile {
-  border-radius: 50px;
+  border-radius: 5rem;
+  padding: 2rem;
+  overflow: hidden;
 }
 
-.tile1 {
+.project1,
+.project5 {
   font-size: 1rem;
+  color: #7b507c;
+  background-color: #3a3348;
+  height: 600px;
+  width: 600px;
+}
+
+.project2,
+.project6 {
+  color: #6ba2a0;
+  background-color: #334845;
+  height: 600px;
+  width: 800px;
+}
+
+.project3,
+.project7 {
+  color: #ffffff4d;
+  background-color: #483337;
+  height: 600px;
+  width: 800px;
+}
+
+.project4,
+.project8 {
+  color: #ffffff4d;
+  background-color: var(--color-1);
+  height: 600px;
+  width: 600px;
+}
+
+.progressHeader {
+  color: var(--color-5);
+  font-size: var(--font-h1);
+  text-align: center;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
+  letter-spacing: -3px;
+
+  }
+  .progressSubHeader {
+    color: var(--color-5);
+    font-size: var(--font-h3);
+    text-align: center;
+    margin-bottom: 5rem;
+    font-weight: 200;
+  }
+
+.progressContainer {
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.progress1 {
+  font-size: 1rem;
+  color: #7b507c;
   background-color: var(--color-6);
-  height: 400px;
+  height: 600px;
   width: 600px;
   z-index: 5;
 }
 
-.tile2 {
+.progress2 {
+  color: #6ba2a0;
   background-color: var(--color-2);
-  height: 800px;
+  height: 600px;
   width: 800px;
 }
 
-.tile3 {
-  background-color: var(--color-4);
-  height: 700px;
-  width: 900px;
-}
-
-.tile4 {
-  background-color: var(--color-1);
-  height: 600px;
-  width: 400px;
-}
-
-.inProgress {
-  text-align: center;
-  display: grid;
-  grid-template-columns: (1fr, 1fr);
-  gap: 20px;
-}
-
-.progress1 {
-  background-color: var(--color-6);
-  height: 800px;
-  width: 400px;
-  z-index: 5;
-}
-
-.progress2 {
-  background-color: var(--color-2);
-  height: 400px;
-  width: 400px;
-}
-
 .progress3 {
+  color: #6ba2a0;
   background-color: var(--color-4);
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 800px;
 }
 
 .progress4 {
   background-color: var(--color-1);
-  height: 400px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
 }
