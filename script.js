@@ -3,13 +3,13 @@
 const Projects = [
   {
     id: "1",
-    name: "Project 1",
+    name: "Splitter",
     description: "this is project 1",
-    image: "Images/screenshot.png",
+    image: "Images/splitter.png",
   },
   {
     id: "2",
-    name: "Project 2",
+    name: "To-do",
     description: "this is project 2",
     image: "Images/screenshot.png",
   },
