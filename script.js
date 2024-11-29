@@ -6,7 +6,7 @@ const Projects = [
     h1: "Splitter",
     h2: "this is project 1",
     description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should.",
+      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
     technologies: "",
     image: "Images/split.png",
     projectUrl: "",
@@ -86,7 +86,7 @@ window.onscroll = function () {
 function navScrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     let nav = document.getElementById("nav");
-    nav.style.backgroundColor = "var(--color-navbar-bg)";
+    nav.style.backgroundColor = "";
   } else {
     let nav = document.getElementById("nav");
     nav.style.backgroundColor = "";
@@ -155,10 +155,10 @@ function displayProjects() {
     output += `<a href='${project["projectUrl"]}' target="_blank">See in browser</a>`;
     output += `<a href='${project["githubUrl"]}' target="_blank">See Repo</a>`;
     output += `</div>`;
-    output += `<div>`;
-    output += `<p>${project["description"]}</p>`;
+    output += `<div class="projectDescription" >${project["description"]} </div>`;
+    output += `<div class="descriptionCover">`;
     output += `</div>`;
-    output += `<div class="placment">`;
+    output += `<div class="placement">`;
     output += `<figure class="projectsImageContainer">`;
     output += `<img src='${project["image"]}'>`;
     output += `</figure>`;

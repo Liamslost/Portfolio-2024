@@ -72,7 +72,7 @@
 html {
   scroll-behavior: smooth;
 }
-
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {
     background: var(--gradient-dark);
@@ -91,7 +91,7 @@ html {
     background: var(--color-progress-bg-dark);
   }
 }
-
+/* Light mode */
 @media (prefers-color-scheme: light) {
   body {
     background: var(--gradient-light);
@@ -223,7 +223,28 @@ header {
 }
 
 .projectTile {
+  position: relative;
   transition: color 1s ease, box-shadow 1s ease, scale 1s ease;
+
+  .projectDescription{
+    opacity: 0;
+    position: relative;
+    top:-5px;
+    width: 100%;
+    transition: opacity 2s ease;
+    z-index: -1;
+  }
+}
+
+.descriptionCover
+{
+  position: absolute;
+  top: 125px;
+  background-color: inherit;
+  width:800px;
+  height:100px;
+  z-index: 1;
+  transition: transform 0.7s ease;
 }
 
 .projectTile:hover {
@@ -232,8 +253,8 @@ header {
 
   .projectButtons {
     opacity: 1;
-    transform: translate(-10px, -65px);
-    
+    z-index: 3;
+    transform: translate(-10px, -50px);
   }
   img{
     scale: 105%;
@@ -241,29 +262,41 @@ header {
     /* transform: translate(-400px, -300px); not sure on this */
   }
 
-}
+  .projectDescription {
+    opacity: 1;
+  }
 
-.projectButtons {
-  text-align: right;
-  margin-top: 2rem;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
+  .descriptionCover{
+    transform: translateX(700px);
+  }
 
-.placment {
-  height: 100%;
-  width: 50%;
-  padding-top: 3rem;
-  margin-left: 3rem;
 }
-
 .projectsImageContainer {
   img {
     filter: saturate(40%);
     border-radius: 1rem;
     transition: transform 2s ease, scale 1s ease;
+    left: 0;
   }
 }
+
+.projectButtons {
+  position: relative;
+  text-align: right;
+  margin-top: 1rem;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.placement {
+  height: 100%;
+  width: 50%;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+
 
 .tile {
   border-radius: 5rem;
