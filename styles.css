@@ -18,18 +18,8 @@
 }
 
 :root {
-  --gradient-light: radial-gradient(
-    #b6ad90,
-    #8e618f,
-    #4caca7,
-    #a4ac86
-  );
-  --gradient-dark: radial-gradient(
-    #333d29,
-    #656d4a,
-    #3a3348,
-    #4caca7
-  );
+  --gradient-light: radial-gradient(#b6ad90, #8e618f, #4caca7, #a4ac86);
+  --gradient-dark: radial-gradient(#333d29, #656d4a, #3a3348, #4caca7);
   --color-hero-bg-dark: linear-gradient(
     180deg,
     #41483300 0%,
@@ -63,7 +53,6 @@
   --color-background: #233831;
   --color-body-text: #c2c5aa;
   --color-hero-text: #c2c5aa;
-  /* #b6ad90; */
   --color-navbar-bg: #c2c5aab5;
   --color-1: #1f1206;
   --color-2: #21150a;
@@ -82,10 +71,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -140,24 +125,27 @@ header {
 }
 
 #nav {
-  transition: background-color 0.2s ease;
+  transition: background-color 0.5s ease;
 }
 
 .nav {
-  height: 80px;
+  height: 65px;
   width: 950px;
   margin: 0 auto;
-  padding: 10px 10px;
-  border-radius: 40px;
+  padding: 11px 10px;
+  border-radius: 60px;
   backdrop-filter: blur(5px);
+  
 
   ul {
     color: var(--color-7);
-    width: 100%;
-    margin: 10px auto 10px auto;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+
+    li{
+      cursor: pointer;
+    }
 
     a:active {
       color: var(--color-1);
@@ -168,7 +156,7 @@ header {
   img {
     height: 40px;
     margin: 0 1rem;
-    filter: opacity(0.6);
+    filter: opacity(0.5);
   }
 }
 
@@ -182,6 +170,11 @@ header {
   li {
     margin: 0 auto;
   }
+}
+
+.navTab:hover{
+  background-color: var(--color-2);
+  transition: background-color 0.5s ease;
 }
 
 .hero {
@@ -221,32 +214,56 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   gap: 64px;
+
+  a {
+    border: 3px #ffffff4d solid;
+    padding: 10px 30px;
+    margin: 10px;
+  }
+}
+
+.projectTile {
+  transition: color 1s ease, box-shadow 1s ease, scale 1s ease;
+}
+
+.projectTile:hover {
+  box-shadow: 13px 25px 30px -6px rgba(0,0,0,0.2);
+  scale: 105%;
+
+  .projectButtons {
+    opacity: 1;
+    transform: translate(-10px, -65px);
+    
+  }
+  img{
+    scale: 105%;
+    filter: saturate(90%)
+    /* transform: translate(-400px, -300px); not sure on this */
+  }
+
+}
+
+.projectButtons {
+  text-align: right;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .placment {
   height: 100%;
   width: 50%;
-  padding-top: 7rem;
+  padding-top: 3rem;
   margin-left: 3rem;
 }
 
 .projectsImageContainer {
   img {
-    filter: saturate(100%);
+    filter: saturate(40%);
     border-radius: 1rem;
+    transition: transform 2s ease, scale 1s ease;
   }
 }
-
-/* .projectTitle {
-  text-align: right;
-  margin-right: 2rem;
-  h1 {
-    font-weight: 200;
-    letter-spacing: -1px;
-  }
-  h2 {
-  }
-} */
 
 .tile {
   border-radius: 5rem;
@@ -268,7 +285,7 @@ header {
   color: #6ba2a0;
   background-color: #334845;
   height: 600px;
-  width: 800px;
+  width: 700px;
 }
 
 .project3,
@@ -276,7 +293,7 @@ header {
   color: #ffffff4d;
   background-color: #483337;
   height: 600px;
-  width: 800px;
+  width: 700px;
 }
 
 .project4,
@@ -294,23 +311,32 @@ header {
   padding-top: 4rem;
   margin-bottom: 2rem;
   letter-spacing: -3px;
+}
 
-  }
-  .progressSubHeader {
-    color: var(--color-5);
-    font-size: var(--font-h3);
-    text-align: center;
-    margin-bottom: 5rem;
-    font-weight: 200;
-  }
+.progressSubHeader {
+  color: var(--color-5);
+  font-size: var(--font-h3);
+  text-align: center;
+  margin-bottom: 5rem;
+  font-weight: 200;
+}
 
 .progressContainer {
-  width: 100%;
-  z-index: 5;
+  border: 3px white solid;
+  margin: 0 auto;
+  width: 75%;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 64px;
+
+  .tile {
+    overflow: visible;
+    margin-right: 200px;
+  }
+}
+
+
+.tall {
+  background-color: #4caca7;
+  height: 4000px;
 }
 
 .progress1 {
@@ -318,26 +344,26 @@ header {
   color: #7b507c;
   background-color: var(--color-6);
   height: 600px;
-  width: 600px;
-  z-index: 5;
+  width: 1000px;
 }
 
 .progress2 {
   color: #6ba2a0;
   background-color: var(--color-2);
   height: 600px;
-  width: 800px;
+  width: 1000px;
 }
 
 .progress3 {
   color: #6ba2a0;
   background-color: var(--color-4);
   height: 600px;
-  width: 800px;
+  width: 1000px;
 }
 
 .progress4 {
+  color: #6ba2a0;
   background-color: var(--color-1);
   height: 600px;
-  width: 600px;
+  width: 1000px;
 }
