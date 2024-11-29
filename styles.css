@@ -117,6 +117,10 @@ a {
   color: inherit;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   position: sticky;
   top: 40px;
@@ -124,96 +128,85 @@ header {
   /* width: 100%; */
 }
 
-#nav {
+/* #nav {
   transition: background-color 0.5s ease;
-}
-
-/* .nav {
-  height: 65px;
-  width: 950px;
-  margin: 0 auto;
-  padding: 11px 10px;
-  border-radius: 60px;
-
-  ul {
-    color: var(--color-7);
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-
-    li {
-      cursor: pointer;
-    }
-
-    li:active {
-      color: var(--color-1);
-      background-color: var(--color-5);
-    }
-  }
 } */
-
-.navBar {
-  width: 75%;
-  border-radius: 400px;
-  padding: 1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
+#logoLinks {
+  border: 3px solid #1f1206;
+  width: 900px;
   display: flex;
   justify-content: space-between;
+
+  img {
+    border: 2px solid black;
+    height: 40px;
+    opacity: 0.4;
+  }
+}
+
+.navBar {
+  width: 800px;
   border-radius: 40px;
-  background-color: none;
+  text-align: center;
+  padding: 12px 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 40px;
   backdrop-filter: blur(5px);
   z-index: 10;
   margin: 0 auto;
 
-  img {
-    height: 30px;
-    opacity: 0.4;
-  }
-
-  div {
+  ul {
     display: flex;
-
-    a {
-      padding: 0 10px;
-      height: 40px;
-      filter: opacity(0.5);
-    }
-
-    a:hover{
-      scale: 110%;
-    }
+    justify-content: space-between;
   }
-  & ul {
-    display: flex;
-
-    & li {
-      background-color: #1f1206;
-      cursor: pointer;
-      list-style: none;
-      border-radius: 40px;
-      width: 175px;
-      margin: 0 10px;
-      transform: perspective(1px) translateZ(0);
-      transition: all 0.5s ease;
-      & a {
-        color: rgba(255, 255, 255, 0.5);
-        display: inline-block;
-        width: 175px;
-        padding: 12px 0;
-        border-radius: 20px;
-        text-align: center;
-        transition: background-color 1s ease;
-      }
-      &:hover {
-        transform: scale(1.1);
-        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-      }
-    }
+  li {
+    width: 175px;
+    padding: 12px 0;
+    background-color: transparent;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 40px;
+    width: 175px;
+    margin: 0 10px;
+    transition: background-color 1s ease;
   }
-  .navBar & li.active {
-    background-color: white;
+  a {
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    transition: background-color 1s ease;
+  }
+}
+
+@keyframes spin {
+  0%{
+    scale: 1;
+    transform: rotateZ(0deg);
+  }
+    50%{
+      scale: 1.2;
+    }
+  
+  100% {
+    scale: 1;
+    transform: rotateZ(360deg);
+  }
+}
+
+.navBar li.active {
+  background-color: white;
+  animation: spin 2s ease;
+  a {
+    color: #1f1206;
+  }
+}
+
+.navBar li:hover {
+  background-color: #97aa4d75;
+  a {
+    color: #2b0f91;
   }
 }
 
@@ -229,22 +222,26 @@ header {
 
 } */
 
+/* **************** HERO **************** */
+
 .hero {
   height: 80vh;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
   line-height: 1.25;
-  padding-top: 10rem;
+  padding-top: 9rem;
 
   h1 {
     font-size: var(--font-h1);
-    letter-spacing: -5px;
+    letter-spacing: -6px;
   }
   h2 {
     font-size: var(--font-h2);
   }
 }
+
+/* *******************PROJECTS******************* */
 
 .projectsCounterContainer {
   width: 800px;
@@ -261,7 +258,7 @@ header {
 
 .projectsContainer {
   width: 100%;
-  z-index: 5;
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -346,13 +343,6 @@ header {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* .placement {
-  height: 100%;
-  width: 50%;
-  margin-left: 3rem;
-  margin-top: 3rem;
-} */
-
 .tile {
   border-radius: 5rem;
   padding: 2rem;
@@ -414,11 +404,6 @@ header {
   margin: 0 auto;
   width: 75%;
   display: flex;
-
-  .tile {
-    overflow: visible;
-    margin-right: 200px;
-  }
 }
 
 .tall {

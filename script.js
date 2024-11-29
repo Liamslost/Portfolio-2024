@@ -102,13 +102,12 @@ function navScrollFunction() {
   }
 }
 
-const navButtons = document.querySelectorAll("navBar li")
+const navButtons = document.querySelectorAll(".navBar li");
 
 navButtons.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    navButtons.forEach(btn => btn.classList.remove('active'));
-
-    event.currentTarget.classList.add('active')
+  button.addEventListener("click", () => {
+    navButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active")
   })
 });
 
