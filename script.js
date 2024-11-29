@@ -17,7 +17,7 @@ const Projects = [
     h1: "Price Calculator",
     h2: "this is project 2",
     description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should.",
+      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
     technologies: "",
     image: "Images/traffic-calculator.png",
     projectUrl: "",
@@ -28,7 +28,7 @@ const Projects = [
     h1: "Slim To-do App",
     h2: "this is project 3",
     description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should.",
+      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
 
     technologies: "",
     image: "Images/to-do.png",
@@ -40,7 +40,7 @@ const Projects = [
     h1: "Collections",
     h2: "this is project 4",
     description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should.",
+      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
     technologies: "",
     image: "Images/Placeholder.png",
     projectUrl: "",
@@ -79,26 +79,40 @@ const CountProjects = Projects.length;
 const CountProgress = Progress.length;
 const ScrollContainer = document.querySelector(".progressContainer");
 
-window.onscroll = function () {
-  navScrollFunction();
-};
+// window.onscroll = function () {
+//   navScrollFunction();
+// };
 
-function navScrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    let nav = document.getElementById("nav");
-    nav.style.backgroundColor = "";
-  } else {
-    let nav = document.getElementById("nav");
-    nav.style.backgroundColor = "";
-  }
-}
+window.addEventListener ("scroll", navScrollFunction);
 
 window.addEventListener("DOMContentLoaded", () => {
   projectsCounter();
   progressCounter();
   displayProjects();
-  displayProgress();
+  // displayProgress();
 });
+
+function navScrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    let nav = document.querySelector(".navBar");
+    nav.style.backgroundColor = "#a4ac8632";
+  } else {
+    let nav = document.querySelector(".navBar");
+    nav.style.backgroundColor = "transparent";
+  }
+}
+
+const navButtons = document.querySelectorAll("navBar li")
+
+navButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    navButtons.forEach(btn => btn.classList.remove('active'));
+
+    event.currentTarget.classList.add('active')
+  })
+});
+
+
 
 function topFunction() {
   document.body.scrollTop = 0;
@@ -158,20 +172,15 @@ function displayProjects() {
     output += `<div class="projectDescription" >${project["description"]} </div>`;
     output += `<div class="descriptionCover">`;
     output += `</div>`;
-    output += `<div class="placement">`;
     output += `<figure class="projectsImageContainer">`;
     output += `<img src='${project["image"]}'>`;
     output += `</figure>`;
     output += `</div>`;
     output += `</div>`;
   });
-  //
 
-  if (!projectsContainer) {
-    console.error("projectsContainer element not found in the DOM");
-  } else {
     projectsContainer.innerHTML = output;
-  }
+ 
 }
 
 function displayProgress() {
@@ -191,9 +200,6 @@ function displayProgress() {
     output += `</div>`;
   });
 
-  if (!progressContainer) {
-    console.error("progressContainer element not found in the DOM");
-  } else {
     progressContainer.innerHTML = output;
-  }
+
 }

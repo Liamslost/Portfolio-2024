@@ -121,21 +121,19 @@ header {
   position: sticky;
   top: 40px;
   z-index: 10;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #nav {
   transition: background-color 0.5s ease;
 }
 
-.nav {
+/* .nav {
   height: 65px;
   width: 950px;
   margin: 0 auto;
   padding: 11px 10px;
   border-radius: 60px;
-  backdrop-filter: blur(5px);
-  
 
   ul {
     color: var(--color-7);
@@ -143,39 +141,93 @@ header {
     display: flex;
     justify-content: space-between;
 
-    li{
+    li {
       cursor: pointer;
     }
 
-    a:active {
+    li:active {
       color: var(--color-1);
       background-color: var(--color-5);
     }
   }
+} */
+
+.navBar {
+  width: 75%;
+  border-radius: 400px;
+  padding: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 40px;
+  background-color: none;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  margin: 0 auto;
 
   img {
-    height: 40px;
-    margin: 0 1rem;
-    filter: opacity(0.5);
+    height: 30px;
+    opacity: 0.4;
+  }
+
+  div {
+    display: flex;
+
+    a {
+      padding: 0 10px;
+      height: 40px;
+      filter: opacity(0.5);
+    }
+
+    a:hover{
+      scale: 110%;
+    }
+  }
+  & ul {
+    display: flex;
+
+    & li {
+      background-color: #1f1206;
+      cursor: pointer;
+      list-style: none;
+      border-radius: 40px;
+      width: 175px;
+      margin: 0 10px;
+      transform: perspective(1px) translateZ(0);
+      transition: all 0.5s ease;
+      & a {
+        color: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        width: 175px;
+        padding: 12px 0;
+        border-radius: 20px;
+        text-align: center;
+        transition: background-color 1s ease;
+      }
+      &:hover {
+        transform: scale(1.1);
+        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      }
+    }
+  }
+  .navBar & li.active {
+    background-color: white;
   }
 }
 
-.navTab {
-  width: 175px;
-  padding: 12px 0;
-  background-color: var(--color-background);
-  border-radius: 20px;
-  text-align: center;
+/* .navTab.active {
+  font-weight: bold;
+  background-color: #4caca7;
+} */
 
-  li {
-    margin: 0 auto;
-  }
-}
+/* .navTab:hover {
+  font-weight: bold;
+  background-color: #ac764c;
+  /* transition: background-color 0.5s ease; 
 
-.navTab:hover{
-  background-color: var(--color-2);
-  transition: background-color 0.5s ease;
-}
+} */
 
 .hero {
   height: 80vh;
@@ -220,35 +272,38 @@ header {
     padding: 10px 30px;
     margin: 10px;
   }
+
+  h1 {
+    font-weight: 300;
+  }
 }
 
 .projectTile {
   position: relative;
   transition: color 1s ease, box-shadow 1s ease, scale 1s ease;
 
-  .projectDescription{
+  .projectDescription {
     opacity: 0;
     position: relative;
-    top:-5px;
+    top: -5px;
     width: 100%;
     transition: opacity 2s ease;
     z-index: -1;
   }
 }
 
-.descriptionCover
-{
+.descriptionCover {
   position: absolute;
   top: 125px;
   background-color: inherit;
-  width:800px;
-  height:100px;
+  width: 800px;
+  height: 100px;
   z-index: 1;
   transition: transform 0.7s ease;
 }
 
 .projectTile:hover {
-  box-shadow: 13px 25px 30px -6px rgba(0,0,0,0.2);
+  box-shadow: 13px 25px 30px -6px rgba(0, 0, 0, 0.2);
   scale: 105%;
 
   .projectButtons {
@@ -256,27 +311,29 @@ header {
     z-index: 3;
     transform: translate(-10px, -50px);
   }
-  img{
-    scale: 105%;
-    filter: saturate(90%)
-    /* transform: translate(-400px, -300px); not sure on this */
+  img {
+    scale: 35%;
+    filter: saturate(100%);
+    transform: translate(-1375px, -875px);
   }
 
   .projectDescription {
     opacity: 1;
   }
 
-  .descriptionCover{
+  .descriptionCover {
     transform: translateX(700px);
   }
-
 }
 .projectsImageContainer {
   img {
-    filter: saturate(40%);
+    position: absolute;
+    filter: saturate(10%);
     border-radius: 1rem;
-    transition: transform 2s ease, scale 1s ease;
+    margin-left: 3rem;
+    transition: transform 1s ease-in-out, scale 1s ease;
     left: 0;
+    z-index: 10;
   }
 }
 
@@ -289,14 +346,12 @@ header {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.placement {
+/* .placement {
   height: 100%;
   width: 50%;
   margin-left: 3rem;
   margin-top: 3rem;
-}
-
-
+} */
 
 .tile {
   border-radius: 5rem;
@@ -310,7 +365,7 @@ header {
   color: #7b507c;
   background-color: #3a3348;
   height: 600px;
-  width: 600px;
+  width: 650px;
 }
 
 .project2,
@@ -318,7 +373,7 @@ header {
   color: #6ba2a0;
   background-color: #334845;
   height: 600px;
-  width: 700px;
+  width: 650px;
 }
 
 .project3,
@@ -326,7 +381,7 @@ header {
   color: #ffffff4d;
   background-color: #483337;
   height: 600px;
-  width: 700px;
+  width: 650px;
 }
 
 .project4,
@@ -334,7 +389,7 @@ header {
   color: #ffffff4d;
   background-color: var(--color-1);
   height: 600px;
-  width: 600px;
+  width: 650px;
 }
 
 .progressHeader {
@@ -365,7 +420,6 @@ header {
     margin-right: 200px;
   }
 }
-
 
 .tall {
   background-color: #4caca7;
