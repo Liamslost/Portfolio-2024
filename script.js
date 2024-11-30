@@ -79,26 +79,34 @@ const CountProjects = Projects.length;
 const CountProgress = Progress.length;
 const ScrollContainer = document.querySelector(".progressContainer");
 
-// window.onscroll = function () {
-//   navScrollFunction();
-// };
-
-window.addEventListener ("scroll", navScrollFunction);
+window.addEventListener("scroll", navScrollFunction);
 
 window.addEventListener("DOMContentLoaded", () => {
-  projectsCounter();
-  progressCounter();
   displayProjects();
   // displayProgress();
 });
 
+let counterStarted = false;
+
 function navScrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    let nav = document.querySelector(".navBar");
-    nav.style.backgroundColor = "#a4ac8632";
+  const scrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const nav = document.querySelector(".navBar");
+  const counter = document.querySelector(".projectsCounterContainer");
+
+  if (scrollTop > 10) {
+    nav.classList.add("navScroll");
+    counter.style.opacity = 1;
+
+    if (!counterStarted) {
+      counterStarted = true;
+      projectsCounter();
+      progressCounter();
+    }
   } else {
-    let nav = document.querySelector(".navBar");
-    nav.style.backgroundColor = "transparent";
+    nav.classList.remove("navScroll");
+    counter.style.opacity = 0;
+    counterStarted = false;
   }
 }
 
@@ -107,11 +115,9 @@ const navButtons = document.querySelectorAll(".navBar li");
 navButtons.forEach((button) => {
   button.addEventListener("click", () => {
     navButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active")
-  })
+    button.classList.add("active");
+  });
 });
-
-
 
 function topFunction() {
   document.body.scrollTop = 0;
@@ -124,9 +130,10 @@ function projectsCounter() {
   let currentProjectsCount = 20;
 
   if (!progressCounter) {
-    console.error(" #projectsCounter element not found in DOM");
+    console.error(" ProjectsCounterContainer element not found in DOM");
     return;
   }
+
   const interval = setInterval(() => {
     currentProjectsCount--;
     projectsCounter.textContent = `${currentProjectsCount}`;
@@ -142,7 +149,7 @@ function progressCounter() {
   let currentProgressCount = 20;
 
   if (!inProgress) {
-    console.error("#progressCounter element not found in the DOM");
+    console.error("ProjectsCounterContainer element not found in the DOM");
     return;
   }
   const interval = setInterval(() => {
@@ -178,8 +185,7 @@ function displayProjects() {
     output += `</div>`;
   });
 
-    projectsContainer.innerHTML = output;
- 
+  projectsContainer.innerHTML = output;
 }
 
 function displayProgress() {
@@ -199,6 +205,5 @@ function displayProgress() {
     output += `</div>`;
   });
 
-    progressContainer.innerHTML = output;
-
+  progressContainer.innerHTML = output;
 }
