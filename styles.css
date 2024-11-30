@@ -288,7 +288,6 @@ header {
 
 .projectsCounterContainer {
   width: 1400px;
-  /* padding-top: 2rem; */
   margin: 2rem auto 0 auto;
   display: flex;
   justify-content: space-around;
@@ -305,7 +304,7 @@ header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 64px;
+  gap: 100px;
 
   a {
     border: 3px #ffffff4d solid;
@@ -454,11 +453,6 @@ header {
   display: flex;
 }
 
-.tall {
-  background-color: #4caca7;
-  height: 4000px;
-}
-
 .progress1 {
   font-size: 1rem;
   color: #7b507c;
@@ -490,6 +484,22 @@ header {
 
 /* *******************ABOUT******************* */
 
-
+.about {
+  color: var(--color-5);
+  font-size: var(--font-h1);
+  height: 1000px;
+  text-align: center;
+  h1 {
+    font-size: var(--font-h1);
+    letter-spacing: -6px;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: var(--font-h2);
+    margin-bottom: 5rem;
+    font-weight: 200;
+  }
+}
 
 /* *******************CONTACT******************* */

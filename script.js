@@ -51,27 +51,27 @@ const Projects = [
 const Progress = [
   {
     id: "1",
-    name: "Progress 1",
-    description: "this is 1",
-    image: "Images/work-in-progress.png",
+    name: "Karen Ipsum",
+    description: "A lorem ipsum generator inspored by the works of 'Karens' from all over the world",
+    image: "",
   },
   {
     id: "2",
     name: "Progress 2",
     description: "this is 2",
-    image: "Images/work-in-progress.png",
+    image: "",
   },
   {
     id: "3",
     name: "Progress 3",
     description: "this is 3",
-    image: "Images/work-in-progress.png",
+    image: "",
   },
   {
     id: "4",
     name: "Progress 4",
     description: "this is 4",
-    image: "Images/work-in-progress.png",
+    image: "",
   },
 ];
 
@@ -83,7 +83,7 @@ window.addEventListener("scroll", navScrollFunction);
 
 window.addEventListener("DOMContentLoaded", () => {
   displayProjects();
-  // displayProgress();
+  displayProgress();
 });
 
 let counterStarted = false;
@@ -207,3 +207,21 @@ function displayProgress() {
 
   progressContainer.innerHTML = output;
 }
+
+navigator.geolocation.getCurrentPosition((position) => {
+  const lat = 51.4755;
+  const lon = -2.6101;
+  const apiKey = '9fed275d8f67fab6bbf25890046d3fb6';
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let tempDisplay = document.querySelector('.about span')
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const bristolTemp = Math.round((data.main.temp - 273.15));
+      tempDisplay.innerHTML= `${bristolTemp}&degC`
+    })
+    .catch(error => console.log(error));
+});
+
+
