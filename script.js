@@ -70,6 +70,7 @@ const CountProjects = Projects.length;
 const CountProgress = Progress.length;
 const ScrollContainer = document.querySelector(".progressContainer");
 const navButtons = document.querySelectorAll(".navBar li");
+
 let counterStarted = false;
 window.addEventListener("scroll", navScrollFunction);
 
@@ -77,6 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
   displayProjects();
   displayProgress();
   getTempBristol();
+  progressTileGrow();
 });
 
 function navScrollFunction() {
@@ -107,6 +109,22 @@ navButtons.forEach((button) => {
     button.classList.add("active");
   });
 });
+
+function progressTileGrow(){
+    const tiles = document.querySelectorAll('.progressTile');
+    tiles.forEach((tile) => {
+      tile.addEventListener('click', () => {
+        console.log('EL added');
+  
+        tiles.forEach((t) => t.classList.remove('active'));
+        console.log('class rem');
+
+        tile.classList.add('active');
+
+        console.log('class add');
+      });
+    });
+  }
 
 function topFunction() {
   document.body.scrollTop = 0;
@@ -181,7 +199,7 @@ function displayProgress() {
   let output = "";
   let progressContainer = document.querySelector(".progressContainer");
   Progress.forEach((progress) => {
-    output += `<div class='tile progress${progress["id"]}'>`;
+    output += `<div class='progressTile progress${progress["id"]}'>`;
     output += `<div class="projectTitle">`;
     output += `<h1>${progress["name"]}</h1>`;
     output += `<h2>${progress["description"]}</h2>`;

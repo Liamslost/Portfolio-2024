@@ -150,13 +150,13 @@ header {
   background-color: #ffffff15;
   a {
     animation: wiggle 0.5s forwards;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.3);
   }
 }
 @keyframes pulse {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
   }
 
   70% {
@@ -166,7 +166,7 @@ header {
 
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 
@@ -300,9 +300,7 @@ header {
     transition: opacity 2s ease;
     z-index: -1;
   }
-
 }
-
 
 .descriptionCover {
   position: absolute;
@@ -328,15 +326,14 @@ header {
     filter: saturate(100%);
     transform: translate(-86rem, -54rem);
   }
-
   .projectDescription {
     opacity: 1;
   }
-
   .descriptionCover {
     transform: translateX(100%);
   }
 }
+
 .projectsImageContainer {
   img {
     position: absolute;
@@ -414,35 +411,58 @@ header {
   margin: 0 auto;
   width: 75%;
   display: flex;
+  justify-content: center;
+}
+
+.progressTile{
+  font-size: 1rem;
+  height: 600px;
+  width: 200px;
+  display: inline-block;
+  overflow: hidden;
+  transition: width 1s ease;
+  cursor: pointer;
+  h1{
+    opacity: 0;
+    width:100%;
+    min-width: 200px;
+  }
+  h2 {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+.progressTile.active {
+  background-color: white;
+  width:500px;
+  h1{
+    opacity: 1;
+  }
+}
+
+.progressTile:hover{
+  opacity: 0.6;
 }
 
 .progress1 {
-  font-size: 1rem;
   color: #7b507c;
   background-color: var(--color-6);
-  height: 600px;
-  width: 1000px;
 }
 
 .progress2 {
   color: #6ba2a0;
   background-color: var(--color-2);
-  height: 600px;
-  width: 1000px;
 }
 
 .progress3 {
   color: #6ba2a0;
   background-color: var(--color-4);
-  height: 600px;
-  width: 1000px;
 }
 
 .progress4 {
   color: #6ba2a0;
   background-color: var(--color-1);
-  height: 600px;
-  width: 1000px;
 }
 
 /* *******************ABOUT******************* */
@@ -453,7 +473,6 @@ header {
   font-size: var(--font-h1);
   height: 1000px;
   /* height: 2000px; height for 2 about sections*/
-
   h1 {
     text-align: center;
     font-size: var(--font-h1);
@@ -461,6 +480,7 @@ header {
     margin-top: 10rem;
     padding: 4rem 0;
   }
+
   h2 {
     font-size: var(--font-h2);
     font-weight: 500;
@@ -489,12 +509,12 @@ header {
     padding: 4.5rem;
     display: flex;
     justify-content: space-between;
-
     img {
       margin: 0 auto;
       height: 125%;
       clip-path: xywh(0 5px 100% 75% round 15% 0);
     }
+
     .aboutTextWrapper {
       height: 100%;
       width: 50%;
