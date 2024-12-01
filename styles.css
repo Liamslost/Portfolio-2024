@@ -24,10 +24,10 @@
   --color-8: #656d4a;
   --color-9: #414833;
   --color-10: #333d29;
-  --font-h1: clamp(3.2rem, 0.5781rem + 5.3vw, 7rem);
-  --font-h2: clamp(3rem, 0.5781rem + 8.2vw, 3rem);
+  --font-h1: clamp(2rem, 0.5781rem + 5.4vw, 7rem);
+  --font-h2: clamp(3rem, 0.5781rem + 4.2vw, 3rem);
   --font-h3: clamp(1rem, 0.5781rem + 8.2vw, 3rem);
-  --font-p: clamp(0.5rem, 0.5781rem + 1.5vw, 2.5rem);
+  --font-p: clamp(0.5rem, 0.5781rem + 1.2vw, 2.5rem);
 }
 
 html {
@@ -279,7 +279,8 @@ header {
   a {
     border: 3px #ffffff4d solid;
     padding: 0.75rem 1.5rem;
-    }
+    margin-left: 1rem;
+  }
 
   h1 {
     font-weight: 300;
@@ -291,6 +292,7 @@ header {
   transition: color 1s ease, box-shadow 1s ease, scale 1s ease;
 
   .projectDescription {
+    height: 5rem;
     opacity: 0;
     position: relative;
     top: -5px;
@@ -298,7 +300,9 @@ header {
     transition: opacity 2s ease;
     z-index: -1;
   }
+
 }
+
 
 .descriptionCover {
   position: absolute;
@@ -317,7 +321,7 @@ header {
   .projectButtons {
     opacity: 1;
     z-index: 3;
-    transform: translate(-1rem, -3rem);
+    transform: translate(-1rem, -2.25rem);
   }
   img {
     scale: 35%;
@@ -348,7 +352,6 @@ header {
 .projectButtons {
   position: relative;
   text-align: right;
-  margin-top: 1rem;
   z-index: 5;
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
@@ -448,15 +451,15 @@ header {
   color: #233831;
   background-color: var(--color-5);
   font-size: var(--font-h1);
-  padding-bottom: 4rem;
   height: 1000px;
-  text-align: center;
-  
+  /* height: 2000px; height for 2 about sections*/
+
   h1 {
+    text-align: center;
     font-size: var(--font-h1);
     letter-spacing: -0.35rem;
     margin-top: 10rem;
-    padding: 2rem 0;
+    padding: 4rem 0;
   }
   h2 {
     font-size: var(--font-h2);
@@ -465,48 +468,95 @@ header {
     margin-bottom: 2rem;
   }
 
-  > div {
+  p {
+    width: 100%;
+    font-size: var(--font-p);
+    margin-bottom: 2rem;
+    text-align: left;
+    font-weight: 200;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+
+  .aboutTop {
+    /* height: 30%; height for 2 about sections */
+    height: 55%;
+    width: 95%;
     background-color: var(--color-6);
     border-top-right-radius: 4rem;
     border-bottom-right-radius: 4rem;
-    width: 95%;
-    height: 70%;
-    margin-bottom: 2rem;
-    padding: 4rem;
+    margin-bottom: 8rem;
+    padding: 4.5rem;
     display: flex;
     justify-content: space-between;
 
-    p {
-      width: 100%;
-      font-size: var(--font-p);
-      margin-bottom: 2rem;
-      text-align: left;
-      font-weight: 200;
-      letter-spacing: 2px;
-      line-height: 1.1;
+    img {
+      margin: 0 auto;
+      height: 125%;
+      clip-path: xywh(0 5px 100% 75% round 15% 0);
+    }
+    .aboutTextWrapper {
+      height: 100%;
+      width: 50%;
+      margin-right: 1rem;
+      margin-left: 6%;
     }
 
-    img {
-      height: 100%;
-      clip-path: xywh(0 5px 100% 75% round 15% 0);
+    .aboutImageWrapper {
+      text-align: center;
+      width: 40%;
     }
   }
 }
 
-.aboutTextWrapper {
-  width: 50%;
-  margin-right: 1rem;
-  margin-left: 15rem;
+  /* 
+
+  skills section, not sure i want it
+  .aboutBottom {
+    height: 30%;
+    width: 95%;
+    float: right;
+    background-color: var(--color-6);
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    margin-bottom: 6rem;
+    padding: 4.5rem;
+  }
+
 }
+.skillsWrapper{
+  height:100%;
+  width: 50%;
+}
+
+.skillsContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.skills {
+  background-color: white ;
+  border-radius: 1rem;
+  font-size: 2rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+}
+
+.skills:hover {
+  opacity: 0.5;
+} */
 
 /* *******************CONTACT******************* */
 
-.contact{
+.contact {
   height: 1000px;
   color: var(--color-5);
   text-align: center;
 
-  h1{
+  h1 {
     font-size: var(--font-h1);
     letter-spacing: -0.35rem;
     margin-top: 10rem;

@@ -4,10 +4,8 @@ const Projects = [
   {
     id: "1",
     h1: "Splitter",
-    h2: "this is project 1",
-    description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
-    technologies: "",
+    h2: "React | Tailwind",
+    description: "My first solo React/Tailwind project made over 3 evenings. If I were to spend more time on this I would include validation, unit tests and make the reset button clear the custom tip and restart the animation. I really enjoy working with React and Tailwind.",
     image: "Images/split.png",
     projectUrl: "",
     githubUrl: "https://github.com/Liamslost/splitter",
@@ -15,10 +13,8 @@ const Projects = [
   {
     id: "2",
     h1: "Price Calculator",
-    h2: "this is project 2",
-    description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
-    technologies: "",
+    h2: "JavaScript | CSS",
+    description: "My first solo Javascript project made over 2 days. I enjoyed learning how to use the slider to change the displayed price as well as the annual/monthly price clicker changing the display.",
     image: "Images/traffic-calculator.png",
     projectUrl: "",
     githubUrl: "https://github.com/Liamslost/priceCalculator",
@@ -26,11 +22,8 @@ const Projects = [
   {
     id: "3",
     h1: "Slim To-do App",
-    h2: "this is project 3",
-    description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
-
-    technologies: "",
+    h2: "Slim | PHP | SQL",
+    description: "A quick solo project practising using Slim and MVC with intentional minimal CSS to focus of function over form. The app can add, complete, restore and delete tasks from a SQL database as well as shows task priority. I really enjoyed the organisation of MVC. With more time I would complete the sort by functionality.",
     image: "Images/to-do.png",
     projectUrl: "",
     githubUrl: "https://github.com/Liamslost/slim-to-do-app",
@@ -38,10 +31,8 @@ const Projects = [
   {
     id: "4",
     h1: "Collections",
-    h2: "this is project 4",
-    description:
-      "Life finds a way. What do they got in there? King Kong? You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Eventually, you do plan to have dinosaurs on your dinosaur tour, right?.",
-    technologies: "",
+    h2: "PHP | SQL",
+    description:"This was my first solo PHP project. I was tasked to create an app that can add items to a collection. Within the timeframe I managed to get the app to display all items from the SQL database, add new items and delete exiting entries. Istarted working on filtering the results and would complete this with more time.",
     image: "Images/Placeholder.png",
     projectUrl: "",
     githubUrl: "https://github.com/Liamslost/CollectionsApp",
@@ -224,5 +215,3 @@ function getTempBristol(){
     })
     .catch(error => console.log(error));
   };
-
-
