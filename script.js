@@ -84,6 +84,7 @@ window.addEventListener("scroll", navScrollFunction);
 window.addEventListener("DOMContentLoaded", () => {
   displayProjects();
   displayProgress();
+  getTempBristol();
 });
 
 let counterStarted = false;
@@ -208,7 +209,7 @@ function displayProgress() {
   progressContainer.innerHTML = output;
 }
 
-navigator.geolocation.getCurrentPosition((position) => {
+function getTempBristol(){
   const lat = 51.4755;
   const lon = -2.6101;
   const apiKey = '9fed275d8f67fab6bbf25890046d3fb6';
@@ -222,6 +223,6 @@ navigator.geolocation.getCurrentPosition((position) => {
       tempDisplay.innerHTML= `${bristolTemp}&degC`
     })
     .catch(error => console.log(error));
-});
+  };
 
 

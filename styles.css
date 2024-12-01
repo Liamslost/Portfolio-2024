@@ -9,36 +9,7 @@
 :root {
   --gradient-light: linear-gradient(#b6ad90, #8e618f, #4caca7, #a4ac86);
   --gradient-dark: linear-gradient(90deg, #333d29, #656d4a, #3a3348, #4caca7);
-  --color-hero-bg-dark: linear-gradient(
-    180deg,
-    #41483300 0%,
-    #4148337c 20%,
-    #414833 100%
-  );
-  --color-hero-bg-light: linear-gradient(
-    180deg,
-    #b6ad9000 0%,
-    #b6ad9081 10%,
-    #b6ad90 100%
-  );
   --color-projects-bg-dark: linear-gradient(180deg, #414833 0%, #333d29 100%);
-
-  --color-projects-bg-light: linear-gradient(
-    0deg,
-    rgba(128, 107, 80, 1) 0%,
-    rgba(182, 173, 144, 1) 100%
-  );
-  --color-progress-bg-dark: linear-gradient(
-    180deg,
-    rgba(51, 61, 41, 1) 0%,
-    rgba(65, 72, 51, 1) 50%,
-    rgba(101, 109, 74, 1) 100%
-  );
-  --color-progress-bg-light: linear-gradient(
-    180deg,
-    rgba(128, 107, 80, 1) 39%,
-    rgba(101, 109, 74, 1) 100%
-  );
   --color-background: #233831;
   --color-body-text: #c2c5aa;
   --color-hero-text: #c2c5aa;
@@ -53,9 +24,10 @@
   --color-8: #656d4a;
   --color-9: #414833;
   --color-10: #333d29;
-  --font-h1: clamp(3.2rem, 0.5781rem + 8.2vw, 7rem);
+  --font-h1: clamp(3.2rem, 0.5781rem + 5.3vw, 7rem);
   --font-h2: clamp(3rem, 0.5781rem + 8.2vw, 3rem);
   --font-h3: clamp(1rem, 0.5781rem + 8.2vw, 3rem);
+  --font-p: clamp(0.5rem, 0.5781rem + 1.5vw, 2.5rem);
 }
 
 html {
@@ -65,9 +37,7 @@ html {
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {
-    /* background: var(--gradient-dark);
-    background-size: 400% 400%;
-    animation: gradient 20s ease-in-out infinite; */
+    background-color: #233831;
   }
 
   .hero {
@@ -78,19 +48,18 @@ html {
     /* background: var(--color-projects-bg-dark); */
   }
   .inProgress {
-    
   }
 }
 /* Light mode */
 @media (prefers-color-scheme: light) {
   body {
-    background: var(--gradient-light);
+    background-color: #fbefcf;
     background-size: 400% 200%;
     animation: gradient 10s ease infinite;
   }
 
   .hero {
-    color: var(--color-2);
+    color: #233831;
     /* background: var(--color-hero-bg-light); */
   }
 
@@ -98,7 +67,6 @@ html {
     /* background: var(--color-projects-bg-light); */
   }
   .inProgress {
-    
   }
 }
 
@@ -107,10 +75,9 @@ a {
   color: inherit;
 }
 
-body {
-  
+/* body {
   background-color: #233831;
-}
+} */
 
 header {
   position: sticky;
@@ -171,7 +138,6 @@ header {
   }
 }
 
-
 .navBar li.active {
   background-color: rgba(255, 255, 255, 0.308);
   animation: pulse 2s ease;
@@ -184,30 +150,30 @@ header {
   background-color: #ffffff15;
   a {
     animation: wiggle 0.5s forwards;
-    color: rgba(255, 255, 255, 0.5)
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 @keyframes pulse {
   0% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
-}
+  }
 
-70% {
+  70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-}
+  }
 
-100% {
+  100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-}
+  }
 }
 
 @keyframes wiggle {
   0% {
     transform: rotate(0deg);
-    scale:100%
+    scale: 100%;
   }
   25% {
     transform: rotate(5deg);
@@ -220,16 +186,15 @@ header {
   }
   100% {
     transform: rotate(0deg);
-    scale:110%;
+    scale: 110%;
   }
 }
-
 
 /* **************** HERO **************** */
 
 @keyframes gradient {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 100%;
   }
   50% {
     background-position: 100% 0%;
@@ -240,23 +205,22 @@ header {
 }
 
 .gradient {
-  height: 350px;
+  height: 45%;
   width: 100%;
   position: absolute;
-  margin-top: 50px;
-  /* top: 100px; */
+  margin-top: 3%;
   z-index: -1;
-  filter: blur(100px);
-  background: linear-gradient(
-    90deg,
-    rgba(136, 255, 120, 1) 0%,
-    rgba(0, 166, 180, 1) 20%,
-    rgba(136, 255, 120, 1) 42%,
-    rgba(0, 166, 180, 1) 68%,
-    rgba(136, 255, 120, 1) 100%
+  background: radial-gradient(
+    #c4b2a9 0%,
+    #54756c 31%,
+    #476a6f 50%,
+    #65907e 63%,
+    #a89f83 71%,
+    #65907e 84%
   );
-  background-size: 1000% 200%;
-  animation: gradient 60s ease infinite;
+
+  background-size: 1000% 400%;
+  animation: gradient 20s ease infinite;
 }
 
 .mask {
@@ -267,28 +231,32 @@ header {
 }
 
 .hero {
-  height: 45vh;
+  height: 38vh;
   width: 100%;
   text-align: center;
-  margin: 21rem auto 0 auto;
+  margin: 23% auto 0 auto;
   line-height: 1.25;
   padding-top: 3rem;
   z-index: 2;
 
   h1 {
     font-size: var(--font-h1);
-    letter-spacing: -6px;
+    letter-spacing: -0.4rem;
   }
   h2 {
     font-size: var(--font-h2);
+    font-weight: 400;
   }
 }
 
 /* *******************PROJECTS******************* */
 
 .projectsCounterContainer {
-  width: 1400px;
-  margin: 2rem auto 0 auto;
+  width: 100%;
+  position: relative;
+  top: -3.25rem;
+  margin: 0 auto;
+  margin-bottom: 6rem;
   display: flex;
   justify-content: space-around;
   opacity: 0;
@@ -296,21 +264,22 @@ header {
 
   h3 {
     font-size: 1.5rem;
+    font-weight: 200;
   }
 }
 
 .projectsContainer {
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 50px;
 
   a {
     border: 3px #ffffff4d solid;
-    padding: 10px 30px;
-    margin: 10px;
-  }
+    padding: 0.75rem 1.5rem;
+    }
 
   h1 {
     font-weight: 300;
@@ -338,7 +307,7 @@ header {
   width: 800px;
   height: 100px;
   z-index: 1;
-  transition: transform 0.7s ease;
+  transition: transform 1s ease;
 }
 
 .projectTile:hover {
@@ -348,12 +317,12 @@ header {
   .projectButtons {
     opacity: 1;
     z-index: 3;
-    transform: translate(-10px, -50px);
+    transform: translate(-1rem, -3rem);
   }
   img {
     scale: 35%;
     filter: saturate(100%);
-    transform: translate(-1375px, -875px);
+    transform: translate(-86rem, -54rem);
   }
 
   .projectDescription {
@@ -361,13 +330,13 @@ header {
   }
 
   .descriptionCover {
-    transform: translateX(700px);
+    transform: translateX(100%);
   }
 }
 .projectsImageContainer {
   img {
     position: absolute;
-    filter: saturate(10%);
+    filter: saturate(15%);
     border-radius: 1rem;
     margin-left: 3rem;
     transition: transform 1s ease-in-out, scale 1s ease;
@@ -387,6 +356,8 @@ header {
 
 .tile {
   border-radius: 5rem;
+  height: 80vh;
+  width: 47%;
   padding: 2rem;
   overflow: hidden;
 }
@@ -394,40 +365,29 @@ header {
 .project1,
 .project5 {
   font-size: 1rem;
-  color: #7b507c;
-  background-color: #3a3348;
-  height: 600px;
-  width: 650px;
+  color: #ffffff4d;
+  background-color: #476a6f;
 }
 
 .project2,
 .project6 {
-  color: #6ba2a0;
-  background-color: #334845;
-  height: 600px;
-  width: 650px;
+  color: #ffffff4d;
+  background-color: #65907e;
 }
 
 .project3,
 .project7 {
   color: #ffffff4d;
-  background-color: #483337;
-  height: 600px;
-  width: 650px;
+  background-color: #54756c;
 }
 
 .project4,
 .project8 {
   color: #ffffff4d;
-  background-color: var(--color-1);
-  height: 600px;
-  width: 650px;
+  background-color: #334845;
 }
 
-
 /* *******************PROGRESS******************* */
-
-
 
 .progressHeader {
   color: var(--color-5);
@@ -485,21 +445,70 @@ header {
 /* *******************ABOUT******************* */
 
 .about {
-  color: var(--color-5);
+  color: #233831;
+  background-color: var(--color-5);
   font-size: var(--font-h1);
+  padding-bottom: 4rem;
   height: 1000px;
   text-align: center;
+  
   h1 {
     font-size: var(--font-h1);
-    letter-spacing: -6px;
+    letter-spacing: -0.35rem;
     margin-top: 10rem;
-    margin-bottom: 2rem;
+    padding: 2rem 0;
   }
   h2 {
     font-size: var(--font-h2);
-    margin-bottom: 5rem;
-    font-weight: 200;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  > div {
+    background-color: var(--color-6);
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    width: 95%;
+    height: 70%;
+    margin-bottom: 2rem;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      width: 100%;
+      font-size: var(--font-p);
+      margin-bottom: 2rem;
+      text-align: left;
+      font-weight: 200;
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+
+    img {
+      height: 100%;
+      clip-path: xywh(0 5px 100% 75% round 15% 0);
+    }
   }
 }
 
+.aboutTextWrapper {
+  width: 50%;
+  margin-right: 1rem;
+  margin-left: 15rem;
+}
+
 /* *******************CONTACT******************* */
+
+.contact{
+  height: 1000px;
+  color: var(--color-5);
+  text-align: center;
+
+  h1{
+    font-size: var(--font-h1);
+    letter-spacing: -0.35rem;
+    margin-top: 10rem;
+  }
+}
