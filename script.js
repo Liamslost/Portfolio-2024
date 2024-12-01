@@ -69,7 +69,8 @@ const Progress = [
 const CountProjects = Projects.length;
 const CountProgress = Progress.length;
 const ScrollContainer = document.querySelector(".progressContainer");
-
+const navButtons = document.querySelectorAll(".navBar li");
+let counterStarted = false;
 window.addEventListener("scroll", navScrollFunction);
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -77,8 +78,6 @@ window.addEventListener("DOMContentLoaded", () => {
   displayProgress();
   getTempBristol();
 });
-
-let counterStarted = false;
 
 function navScrollFunction() {
   const scrollTop =
@@ -101,8 +100,6 @@ function navScrollFunction() {
     counterStarted = false;
   }
 }
-
-const navButtons = document.querySelectorAll(".navBar li");
 
 navButtons.forEach((button) => {
   button.addEventListener("click", () => {
