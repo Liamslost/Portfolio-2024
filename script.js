@@ -198,8 +198,9 @@ function displayProjects() {
 function displayProgress() {
   let output = "";
   let progressContainer = document.querySelector(".progressContainer");
-  Progress.forEach((progress) => {
-    output += `<div class='progressTile progress${progress["id"]}'>`;
+  Progress.forEach((progress, index) => {
+    const active = index === 0 ? 'active' : '';
+    output += `<div class='progressTile progress${progress["id"]} ${active}'>`;
     output += `<div class="projectTitle">`;
     output += `<h1>${progress["name"]}</h1>`;
     output += `<h2>${progress["description"]}</h2>`;

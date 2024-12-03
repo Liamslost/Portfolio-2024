@@ -24,8 +24,8 @@
   --color-8: #656d4a;
   --color-9: #414833;
   --color-10: #333d29;
-  --font-h1: clamp(2rem, 0.5781rem + 5.4vw, 7rem);
-  --font-h2: clamp(3rem, 0.5781rem + 4.2vw, 3rem);
+  --font-h1: clamp(2.5rem, 0.5781rem + 5.4vw, 7rem);
+  --font-h2: clamp(1.5rem, 0.5781rem + 4.2vw, 3rem);
   --font-h3: clamp(1rem, 0.5781rem + 8.2vw, 3rem);
   --font-p: clamp(0.5rem, 0.5781rem + 1.2vw, 2.5rem);
 }
@@ -81,21 +81,10 @@ a {
 
 header {
   position: sticky;
-  top: 40px;
+  padding-top: 40px;
+  top: 0;
   z-index: 10;
-}
-
-#logoLinks {
-  border: 3px solid #1f1206;
-  width: 900px;
-  display: flex;
-  justify-content: space-between;
-
-  img {
-    border: 2px solid black;
-    height: 40px;
-    opacity: 0.4;
-  }
+  backdrop-filter: blur(5px);
 }
 
 .navScroll {
@@ -135,6 +124,7 @@ header {
     display: inline-block;
     border-radius: 20px;
     text-align: center;
+    mix-blend-mode: difference;
   }
 }
 
@@ -143,6 +133,7 @@ header {
   animation: pulse 2s ease;
   a {
     color: #1f1206;
+    mix-blend-mode: difference;
   }
 }
 
@@ -205,7 +196,7 @@ header {
 }
 
 .gradient {
-  height: 45%;
+  height: 40vh;
   width: 100%;
   position: absolute;
   margin-top: 3%;
@@ -357,7 +348,12 @@ header {
 .tile {
   border-radius: 5rem;
   height: 80vh;
-  width: 47%;
+  aspect-ratio: 1;
+  max-height: 650px;
+  /* max-width: 650px; */
+  min-height: 200px;
+  /* min-width: 400px; */
+  /* width: 47%; */
   padding: 2rem;
   overflow: hidden;
 }
@@ -407,62 +403,69 @@ header {
 }
 
 .progressContainer {
-  border: 3px white solid;
   margin: 0 auto;
   width: 75%;
   display: flex;
   justify-content: center;
 }
 
-.progressTile{
+.progressTile {
   font-size: 1rem;
-  height: 600px;
+  border-radius: 0.25rem;
+  height: 500px;
   width: 200px;
+  padding: 1rem;
   display: inline-block;
   overflow: hidden;
   transition: width 1s ease;
   cursor: pointer;
-  h1{
-    opacity: 0;
-    width:100%;
+  transition: all 1s ease;
+  h1 {
+    width: 100%;
     min-width: 200px;
   }
   h2 {
     opacity: 0;
     width: 100%;
+    min-width: 480px;
+    transition: opacity 1s forwards;
+    transition-delay: 1s;
   }
 }
 
 .progressTile.active {
   background-color: white;
-  width:500px;
-  h1{
+  width: 400px;
+  transform: translateY(-2rem);
+  h1 {
+  }
+  h2 {
     opacity: 1;
   }
 }
 
-.progressTile:hover{
+.progressTile:hover {
   opacity: 0.6;
 }
 
 .progress1 {
   color: #7b507c;
-  background-color: var(--color-6);
+  background-color: #476a6f;
 }
 
 .progress2 {
   color: #6ba2a0;
-  background-color: var(--color-2);
+  background-color: #496057;
 }
 
 .progress3 {
   color: #6ba2a0;
-  background-color: var(--color-4);
+  background-color: #54756c;
 }
 
 .progress4 {
   color: #6ba2a0;
-  background-color: var(--color-1);
+  background-color: #ffffff4d;
 }
 
 /* *******************ABOUT******************* */
@@ -529,7 +532,7 @@ header {
   }
 }
 
-  /* 
+/* 
 
   skills section, not sure i want it
   .aboutBottom {
@@ -580,5 +583,58 @@ header {
     font-size: var(--font-h1);
     letter-spacing: -0.35rem;
     margin-top: 10rem;
+  }
+}
+/* 432 wide or less */
+@media screen and (max-width: 500px) {
+  body {
+    background-color: yellow;
+  }
+
+  .navBar {
+    display: none;
+  }
+  .hero {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    margin: 23% auto 0 auto;
+    line-height: 1.25;
+    display: block;
+
+    z-index: 2;
+
+    h1 {
+      font-size: var(--font-h1);
+      letter-spacing: -0.1rem;
+    }
+    h2 {
+      font-size: var(--font-h2);
+      font-weight: 400;
+    }
+
+    .gradient {
+      margin-top: 0;
+      height: 100px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      margin-top: 3%;
+      z-index: -1;
+      background: radial-gradient(
+        #c4b2a9 0%,
+        #54756c 31%,
+        #476a6f 50%,
+        #65907e 63%,
+        #a89f83 71%,
+        #65907e 84%
+      );
+
+      background-size: 1000% 400%;
+      animation: gradient 20s ease infinite;
+    }
+    .mask {
+      mask-size: auto;
+    }
   }
 }
