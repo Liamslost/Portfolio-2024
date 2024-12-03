@@ -24,10 +24,10 @@
   --color-8: #656d4a;
   --color-9: #414833;
   --color-10: #333d29;
-  --font-h1: clamp(2.5rem, 0.5781rem + 5.4vw, 7rem);
-  --font-h2: clamp(1.5rem, 0.5781rem + 4.2vw, 3rem);
-  --font-h3: clamp(1rem, 0.5781rem + 8.2vw, 3rem);
-  --font-p: clamp(0.5rem, 0.5781rem + 1.2vw, 2.5rem);
+  --font-h1: clamp(2rem, 0.5781rem + 5.4vw, 6.5rem);
+  --font-h2: clamp(1.5rem, 0.5781rem + 4.2vw, 3.5rem);
+  --font-h3: clamp(0.75rem, 0.5781rem + 4.2vw, 3rem);
+  --font-p: clamp(1rem, 0.5781rem + 1.55vw, 3rem);
 }
 
 html {
@@ -93,7 +93,8 @@ header {
 }
 
 .navBar {
-  width: 800px;
+  width: 80%;
+  max-width: 900px;
   border-radius: 40px;
   text-align: center;
   padding: 12px 26px;
@@ -198,9 +199,7 @@ header {
 .gradient {
   height: 40vh;
   width: 100%;
-  position: absolute;
   margin-top: 3%;
-  z-index: -1;
   background: radial-gradient(
     #c4b2a9 0%,
     #54756c 31%,
@@ -217,22 +216,20 @@ header {
 .mask {
   mask-image: url(Images/Mountains-outline.svg);
   mask-repeat: no-repeat;
-  mask-position: 50% 10%;
+  mask-position: 50% 0;
   mask-size: contain;
 }
 
 .hero {
-  height: 38vh;
+  height: 30vh;
   width: 100%;
   text-align: center;
-  margin: 23% auto 0 auto;
+  margin: 0 auto;
   line-height: 1.25;
-  padding-top: 3rem;
-  z-index: 2;
 
   h1 {
     font-size: var(--font-h1);
-    letter-spacing: -0.4rem;
+    letter-spacing: -0.3rem;
   }
   h2 {
     font-size: var(--font-h2);
@@ -240,14 +237,12 @@ header {
   }
 }
 
-/* *******************PROJECTS******************* */
-
 .projectsCounterContainer {
   width: 100%;
   position: relative;
-  top: -3.25rem;
+  top: -3.5rem;
   margin: 0 auto;
-  margin-bottom: 6rem;
+  margin-bottom: clamp(0.1rem, 2.5rem + 1vw, 10rem);
   display: flex;
   justify-content: space-around;
   opacity: 0;
@@ -255,9 +250,10 @@ header {
 
   h3 {
     font-size: 1.5rem;
-    font-weight: 200;
+    font-weight: 300;
   }
 }
+/* *******************PROJECTS******************* */
 
 .projectsContainer {
   width: 95%;
@@ -474,28 +470,30 @@ header {
   color: #233831;
   background-color: var(--color-5);
   font-size: var(--font-h1);
-  height: 1000px;
+  height: 100vh;
+  min-height: 900px;
   /* height: 2000px; height for 2 about sections*/
   h1 {
     text-align: center;
     font-size: var(--font-h1);
     letter-spacing: -0.35rem;
     margin-top: 10rem;
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
 
   h2 {
     font-size: var(--font-h2);
     font-weight: 500;
     text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   p {
     width: 100%;
+    /* max-width: 600px; */
     font-size: var(--font-p);
-    margin-bottom: 2rem;
-    text-align: left;
+    margin-bottom: 1rem;
+    /* text-align: left; */
     font-weight: 200;
     letter-spacing: 2px;
     line-height: 1.1;
@@ -503,33 +501,41 @@ header {
 
   .aboutTop {
     /* height: 30%; height for 2 about sections */
-    height: 55%;
+    height: 70vh;
     width: 95%;
     background-color: var(--color-6);
     border-top-right-radius: 4rem;
     border-bottom-right-radius: 4rem;
     margin-bottom: 8rem;
-    padding: 4.5rem;
+    padding: 5rem;
     display: flex;
     justify-content: space-between;
-    img {
-      margin: 0 auto;
-      height: 125%;
-      clip-path: xywh(0 5px 100% 75% round 15% 0);
-    }
-
-    .aboutTextWrapper {
-      height: 100%;
-      width: 50%;
-      margin-right: 1rem;
-      margin-left: 6%;
-    }
 
     .aboutImageWrapper {
       text-align: center;
+      height: auto;
       width: 40%;
+      display: flex;
+      align-items: center;
+      img {
+        /* margin: 0 auto; */
+        max-height: 100%;
+        max-width: 100%;
+        clip-path: xywh(0 0 100% 100% round 3rem 0);
+        object-fit: contain;
+        margin-left: 3rem;
+      }
     }
   }
+}
+.aboutTextWrapper {
+  height: 100%;
+  width: 60%;
+  max-width: 1050px;
+  padding-left: clamp(0rem, 0.1rem + 4vw, 10rem );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* 
@@ -585,56 +591,119 @@ header {
     margin-top: 10rem;
   }
 }
-/* 432 wide or less */
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 550px) {
   body {
-    background-color: yellow;
+    /* background-color: yellow; */
+  }
+  header {
+    background-color: #233831;
+    margin-bottom: 1rem;
   }
 
   .navBar {
     display: none;
   }
+
+  .gradient {
+    height: 200px;
+    width: 90%;
+    margin: 0 auto;
+  }
   .hero {
     height: 200px;
-    width: 100%;
-    text-align: center;
-    margin: 23% auto 0 auto;
-    line-height: 1.25;
-    display: block;
-
-    z-index: 2;
 
     h1 {
-      font-size: var(--font-h1);
       letter-spacing: -0.1rem;
-    }
-    h2 {
-      font-size: var(--font-h2);
-      font-weight: 400;
-    }
-
-    .gradient {
-      margin-top: 0;
-      height: 100px;
-      width: 100%;
-      display: block;
-      position: absolute;
-      margin-top: 3%;
-      z-index: -1;
-      background: radial-gradient(
-        #c4b2a9 0%,
-        #54756c 31%,
-        #476a6f 50%,
-        #65907e 63%,
-        #a89f83 71%,
-        #65907e 84%
-      );
-
-      background-size: 1000% 400%;
-      animation: gradient 20s ease infinite;
-    }
-    .mask {
-      mask-size: auto;
+      margin-bottom: 0;
     }
   }
+  .projectsCounterContainer {
+    visibility: hidden;
+    margin-top: 1rem;
+    position: static;
+    font-weight: 100;
+
+    h3 {
+    }
+  }
+  .projectsContainer {
+    a {
+      padding: 0.25rem 0.25rem;
+      margin-right: 0.25rem;
+      margin-left: 0;
+    }
+  }
+
+  .projectTitle {
+    padding-bottom: 1rem;
+  }
+
+  .descriptionCover {
+    display: none;
+  }
+
+  .projectTile:hover {
+    .projectButtons {
+      transform: translate(0rem, 0rem);
+    }
+    img {
+      transform: translate(3rem, 4rem);
+    }
+    .projectDescription {
+      padding-top: 1.5rem;
+    }
+    .descriptionCover {
+      display: none;
+    }
+  }
+
+  .projectButtons {
+    text-align: left;
+  }
+
+  .tile {
+    height: 350px;
+  }
+
+  .progressHeader {
+    color: var(--color-5);
+    font-size: var(--font-h1);
+    text-align: center;
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+
+  .progressSubHeader {
+    color: var(--color-5);
+    font-size: var(--font-h3);
+    text-align: center;
+    margin-bottom: 5rem;
+    font-weight: 200;
+  }
+
+  .about {
+    height: 800px;
+
+    h1 {
+      letter-spacing: -0.12rem;
+    }
+
+    p {
+      font-weight: 300;
+    }
+    .aboutTop {
+      height: 65%;
+      padding: 3rem;
+      .aboutImageWrapper {
+        display: none;
+      }
+    }
+  }
+}
+
+.aboutTextWrapper {
+  width: 100%;
+  margin: 0 auto;
 }
