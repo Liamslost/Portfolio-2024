@@ -76,7 +76,7 @@ window.addEventListener("scroll", navScrollFunction);
 
 window.addEventListener("DOMContentLoaded", () => {
   displayProjects();
-  displayProgress();
+  // displayProgress();
   getTempBristol();
   progressTileGrow();
 });

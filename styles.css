@@ -380,7 +380,6 @@ header {
 }
 
 /* *******************PROGRESS******************* */
-
 .progressHeader {
   color: var(--color-5);
   font-size: var(--font-h1);
@@ -394,71 +393,134 @@ header {
   color: var(--color-5);
   font-size: var(--font-h3);
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
   font-weight: 200;
 }
 
 .progressContainer {
+  height:400px;
   margin: 0 auto;
-  width: 75%;
+  padding: 0 50px 0 50px;
+  width: 90%;
   display: flex;
   justify-content: center;
 }
 
-.progressTile {
-  font-size: 1rem;
-  border-radius: 0.25rem;
-  height: 500px;
-  width: 200px;
-  padding: 1rem;
-  display: inline-block;
-  overflow: hidden;
-  transition: width 1s ease;
-  cursor: pointer;
-  transition: all 1s ease;
-  h1 {
-    width: 100%;
-    min-width: 200px;
+.cable{
+  background-color: black;
+  position: relative;
+  top:15%;
+  height: 10px;
+  width: 100%;
+}
+
+.flipper-card{
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.flipper-card-inner{
+  position: relative;
+  width: 250px;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: middle middle;
+
+}
+
+.flipper-card:hover .flipper-card-inner{
+  transform: rotateY(180deg);
+  transform-origin: center center;
+}
+
+.flip-card-front, .flip-card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
+.flip-card-front{
+  border-radius: 30px;
+  position: absolute;
+  margin-top: 60px;
+  margin-right: 150px;
+  top:-30px;
+  height: 250px;
+  width: 250px;
+  transform-origin: top;
+  animation: rock 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+}
+
+.flip-card-back{
+  transform: rotateY(180deg);
+  position: absolute;
+  margin-top: 60px;
+  margin-right: 150px;
+  top:-30px;
+  height: 250px;
+  width: 250px;
+  transform-origin: middle;
+h3{
+  position: relative;
+  top: 0 ;
+}
+
+}
+
+@keyframes rock {
+  0%, 100%{
+    transform: rotate(-5deg);
   }
-  h2 {
-    opacity: 0;
-    width: 100%;
-    min-width: 480px;
-    transition: opacity 1s forwards;
-    transition-delay: 1s;
+  30%{
+    transform: rotate(10deg);
   }
 }
 
-.progressTile.active {
-  background-color: white;
-  width: 400px;
-  transform: translateY(-2rem);
-  h1 {
-  }
-  h2 {
-    opacity: 1;
-  }
+.hook{
+  background-color: grey;
+  height:50px;
+  width: 15px;
+  position: absolute;
+  transform-origin: center;
+  top: -20%;
+  left:119px;
+}
+
+.hook:after{
+  content: '';
+  position: absolute;
+  background-color: rgb(36, 36, 36);
+  border: solid 4px black;
+  height: 40px;
+  width: 40px;
+  right: -16px;
+  top:-30px;
+  border-radius: 50%;
 }
 
 .progressTile:hover {
   opacity: 0.6;
 }
-
 .progress1 {
   color: #7b507c;
   background-color: #476a6f;
 }
-
 .progress2 {
   color: #6ba2a0;
   background-color: #496057;
 }
-
 .progress3 {
   color: #6ba2a0;
   background-color: #54756c;
 }
-
 .progress4 {
   color: #6ba2a0;
   background-color: #ffffff4d;
@@ -472,7 +534,6 @@ header {
   font-size: var(--font-h1);
   height: 100vh;
   min-height: 900px;
-  /* height: 2000px; height for 2 about sections*/
   h1 {
     text-align: center;
     font-size: var(--font-h1);
@@ -480,27 +541,21 @@ header {
     margin-top: 10rem;
     padding: 3rem 0;
   }
-
   h2 {
     font-size: var(--font-h2);
     font-weight: 500;
     text-align: left;
     margin-bottom: 1rem;
   }
-
   p {
     width: 100%;
-    /* max-width: 600px; */
     font-size: var(--font-p);
     margin-bottom: 1rem;
-    /* text-align: left; */
     font-weight: 200;
     letter-spacing: 2px;
     line-height: 1.1;
   }
-
   .aboutTop {
-    /* height: 30%; height for 2 about sections */
     height: 70vh;
     width: 95%;
     background-color: var(--color-6);
@@ -510,7 +565,6 @@ header {
     padding: 5rem;
     display: flex;
     justify-content: space-between;
-
     .aboutImageWrapper {
       text-align: center;
       height: auto;
@@ -537,49 +591,7 @@ header {
   flex-direction: column;
   justify-content: center;
 }
-
-/* 
-
-  skills section, not sure i want it
-  .aboutBottom {
-    height: 30%;
-    width: 95%;
-    float: right;
-    background-color: var(--color-6);
-    border-top-left-radius: 4rem;
-    border-bottom-left-radius: 4rem;
-    margin-bottom: 6rem;
-    padding: 4.5rem;
-  }
-
-}
-.skillsWrapper{
-  height:100%;
-  width: 50%;
-}
-
-.skillsContainer{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.skills {
-  background-color: white ;
-  border-radius: 1rem;
-  font-size: 2rem;
-  height: fit-content;
-  width: fit-content;
-  padding: 1rem;
-}
-
-.skills:hover {
-  opacity: 0.5;
-} */
-
 /* *******************CONTACT******************* */
-
 .contact {
   height: 1000px;
   color: var(--color-5);
@@ -611,7 +623,7 @@ header {
     margin: 0 auto;
   }
   .hero {
-    height: 200px;
+    max-height: 150px;
 
     h1 {
       letter-spacing: -0.1rem;
