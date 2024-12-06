@@ -406,106 +406,6 @@ header {
   justify-content: center;
 }
 
-.cable{
-  background-color: black;
-  position: relative;
-  top:15%;
-  height: 10px;
-  width: 100%;
-}
-
-.flipper-card{
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px;
-}
-
-.flipper-card-inner{
-  position: relative;
-  width: 250px;
-  height: 100%;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  transform-origin: middle middle;
-
-}
-
-.flipper-card:hover .flipper-card-inner{
-  transform: rotateY(180deg);
-  transform-origin: center center;
-}
-
-.flip-card-front, .flip-card-back{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-}
-
-.flip-card-front{
-  border-radius: 30px;
-  position: absolute;
-  margin-top: 60px;
-  margin-right: 150px;
-  top:-30px;
-  height: 250px;
-  width: 250px;
-  transform-origin: top;
-  animation: rock 3s ease-in-out infinite;
-  display: flex;
-  justify-content: center;
-}
-
-.flip-card-back{
-  transform: rotateY(180deg);
-  position: absolute;
-  margin-top: 60px;
-  margin-right: 150px;
-  top:-30px;
-  height: 250px;
-  width: 250px;
-  transform-origin: middle;
-h3{
-  position: relative;
-  top: 0 ;
-}
-
-}
-
-@keyframes rock {
-  0%, 100%{
-    transform: rotate(-5deg);
-  }
-  30%{
-    transform: rotate(10deg);
-  }
-}
-
-.hook{
-  background-color: grey;
-  height:50px;
-  width: 15px;
-  position: absolute;
-  transform-origin: center;
-  top: -20%;
-  left:119px;
-}
-
-.hook:after{
-  content: '';
-  position: absolute;
-  background-color: rgb(36, 36, 36);
-  border: solid 4px black;
-  height: 40px;
-  width: 40px;
-  right: -16px;
-  top:-30px;
-  border-radius: 50%;
-}
-
 .progressTile:hover {
   opacity: 0.6;
 }
@@ -596,14 +496,92 @@ h3{
   height: 1000px;
   color: var(--color-5);
   text-align: center;
+  margin-bottom: 20rem;
 
   h1 {
     font-size: var(--font-h1);
     letter-spacing: -0.35rem;
     margin-top: 10rem;
+    margin-bottom: 10rem;
   }
 }
+.contactContainer{
+  /* border: 4px solid chartreuse; */
+  width:90%;
+  margin: 0 auto;
+  height: 45%;
+  display: flex;
+}
 
+.socialsContainer{
+  border: 5px solid white;
+  width: 50%;
+  height: 100%;
+}
+
+.formContainer{
+  /* border: 5px solid white; */
+  width: 50%;
+  height:100%;
+}
+
+.form{
+  color: #ffffff37;
+  background-color:#476a6f ;
+  border-color: var(--color-5);
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 50px;
+  height: 100%;
+  width: 500px;
+  text-align: center;
+  
+}
+
+.formBtn{
+  color: #0000007b;
+  background-color: #ffffff3d;
+  padding: 10px 30px;
+  border: solid 3px #00000047;
+  transition: all 0.3s ease;
+}
+
+.formBtn:hover{
+  color: #ffffff3d;
+  background-color: #00000047;
+}
+
+#email, #subject, #message{
+  background-color: #5c726f;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  outline: none;
+  margin: 10px;
+}
+
+
+#subject, #email{
+  border: none;
+  height: 30px;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#message{
+  height: 150px;
+  width: 90%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#email:focus, #subject:focus, #message:focus{
+  border: 2px solid #22ff00;
+
+}
+
+
+/* *******************MEDIA QUERIES******************* */
 @media screen and (max-width: 550px) {
   body {
     /* background-color: yellow; */
