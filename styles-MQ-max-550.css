@@ -59,17 +59,14 @@
     height: 350px;
   }
   .progressHeader {
-    color: var(--color-5);
-    font-size: var(--font-h1);
     text-align: center;
     padding-top: 4rem;
     margin-bottom: 1rem;
     letter-spacing: -1px;
   }
   .progressSubHeader {
-    color: var(--color-5);
-    font-size: var(--font-h3);
-    text-align: cen;
+    margin: 0 auto;
+    max-width: 300px;
     margin-bottom: 2rem;
   }
   .progressContainer {
