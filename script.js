@@ -12,7 +12,7 @@ const Projects = [
   },
   {
     id: "2",
-    h1: "Price Calculator",
+    h1: "Calculator",
     h2: "JavaScript | CSS",
     description: "My first solo Javascript project made over 2 days. I enjoyed learning how to use the slider to change the displayed price as well as the annual/monthly price clicker changing the display.",
     image: "Images/traffic-calculator.png",
@@ -21,7 +21,7 @@ const Projects = [
   },
   {
     id: "3",
-    h1: "Slim To-do App",
+    h1: "To-do",
     h2: "Slim | PHP | SQL",
     description: "A quick solo project practising using Slim and MVC with intentional minimal CSS to focus of function over form. The app can add, complete, restore and delete tasks from a SQL database as well as shows task priority. I really enjoyed the organisation of MVC. With more time I would complete the sort by functionality.",
     image: "Images/to-do.png",
@@ -42,28 +42,32 @@ const Projects = [
 const Progress = [
   {
     id: "1",
-    name: "Karen Ipsum",
-    description: "A lorem ipsum generator inspored by the works of 'Karens' from all over the world",
-    image: "",
+    h1: "Karen Ipsum",
+    h2: "TypeScript | Node.js",
+    description: "This Karen-style Ipsum Lorem generator is intended purely for fun and creativity. It&#39;s a playful nod to internet culture and the quirks we all encounter in everyday life. It&#39;s not meant to target individuals (especially anyone named Karen, you're awesome!).",
+    image: "Images/Placeholder.png",
+    githubUrl: "https://github.com/Liamslost",
   },
   {
     id: "2",
-    name: "Progress 2",
-    description: "this is 2",
-    image: "",
+    h1: "Drum Sequencer",
+    h2: "React | Tailwind | TypeScript",
+    description: "This app is just for fun. I&#39;m hoping to be able to create drum loops rather than just tap away and play a drum beat. My aim is to be able to adjust BPM and adjustable notes to 1/16th of a beat.",
+    image: "Images/Placeholder.png",
+    githubUrl: "https://github.com/Liamslost",
   },
-  {
-    id: "3",
-    name: "Progress 3",
-    description: "this is 3",
-    image: "",
-  },
-  {
-    id: "4",
-    name: "Progress 4",
-    description: "this is 4",
-    image: "",
-  },
+  // {
+  //   id: "3",
+  //   name: "Progress 3",
+  //   description: "this is 3",
+  //   image: "",
+  // },
+  // {
+  //   id: "4",
+  //   name: "Progress 4",
+  //   description: "this is 4",
+  //   image: "",
+  // },
 ];
 
 const CountProjects = Projects.length;
@@ -76,7 +80,7 @@ window.addEventListener("scroll", navScrollFunction);
 
 window.addEventListener("DOMContentLoaded", () => {
   displayProjects();
-  // displayProgress();
+  displayProgress();
   getTempBristol();
   progressTileGrow();
 });
@@ -198,14 +202,18 @@ function displayProjects() {
 function displayProgress() {
   let output = "";
   let progressContainer = document.querySelector(".progressContainer");
-  Progress.forEach((progress, index) => {
-    const active = index === 0 ? 'active' : '';
-    output += `<div class='progressTile progress${progress["id"]} ${active}'>`;
-    output += `<div class="projectTitle">`;
-    output += `<h1>${progress["name"]}</h1>`;
-    output += `<h2>${progress["description"]}</h2>`;
+  Progress.forEach((progress) => {
+    
+
+    output += `<div class='tile project${progress["id"]} progressTile'>`;
+    output += `<div class="progressTitle">`;
+    output += `<h1>${progress["h1"]}</h1>`;
+    output += `<h2>${progress["h2"]}</h2>`;
     output += `</div>`;
-    output += `<div class="placment">`;
+    output += `<div class="progressButtons">`;
+    output += `<a href='${progress["githubUrl"]}' target="_blank">See Repo</a>`;
+    output += `</div>`;
+    output += `<div class="progressDescription" >${progress["description"]} </div>`;
     output += `<figure class="projectsImageContainer">`;
     output += `<img src='${progress["image"]}'>`;
     output += `</figure>`;
@@ -263,7 +271,7 @@ fetch(event.target.action, {
   })
 }
 }).catch(error => {
-  status.innerHTML = "Oops! There was a problem submitting your mail"
+  status.innerHTML = "Oops! That didn't work"
 });
 }
 form.addEventListener("submit", handleSubmit)

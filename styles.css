@@ -41,8 +41,8 @@ a {
   color: inherit;
 }
 
-body{
-  background-color: var(--color-background)
+body {
+  background-color: var(--color-background);
 }
 
 header {
@@ -57,7 +57,6 @@ header {
   backdrop-filter: blur(5px);
   background-color: var(--color-background-dark-low-opacity);
   border: 4px solid #ffffff13;
-  
 }
 
 .navBar {
@@ -108,12 +107,10 @@ header {
 
 .navBar a:hover {
   background-color: #ffffff15;
-    li{
-      animation: wiggle 0.5s forwards;
-      color: rgba(255, 255, 255, 0.3);
-      
-    }
-  
+  li {
+    animation: wiggle 0.5s forwards;
+    color: rgba(255, 255, 255, 0.3);
+  }
 }
 @keyframes pulse {
   0% {
@@ -348,6 +345,80 @@ header {
 }
 
 /* *******************PROGRESS******************* */
+
+.progressContainer {
+  height: 600px;
+  margin: 0 auto;
+  padding: 0 50px 0 50px;
+  width: 90%;
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  a {
+    border: 3px #ffffff4d solid;
+    padding: 0.75rem 1.5rem;
+    margin-left: 1rem;
+  }
+
+  h1 {
+    font-weight: 300;
+  }
+}
+
+.progressTile {
+  position: relative;
+  transition: color 1s ease, box-shadow 1s ease, scale 1s ease;
+
+  .progressDescription {
+    height: 5rem;
+    opacity: 0;
+    position: relative;
+    top: -5px;
+    width: 100%;
+    transition: opacity 2s ease;
+    z-index: -1;
+  }
+}
+
+.progressTile:hover {
+  box-shadow: 13px 25px 30px -6px rgba(0, 0, 0, 0.2);
+  scale: 105%;
+
+  .progressButtons {
+    opacity: 1;
+    z-index: 3;
+    transform: translate(-1rem, -2.25rem);
+  }
+  img {
+    scale: 35%;
+    filter: saturate(100%);
+    transform: translate(-86rem, -54rem);
+  }
+  .progressDescription {
+    opacity: 1;
+  }
+}
+
+.progressImageContainer {
+  img {
+    position: absolute;
+    filter: saturate(15%);
+    border-radius: 1rem;
+    margin-left: 3rem;
+    transition: transform 1s ease-in-out, scale 1s ease;
+    left: 0;
+    z-index: 5;
+  }
+}
+
+.progressButtons {
+  position: relative;
+  text-align: right;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
 .progressHeader {
   color: var(--color-5);
   font-size: var(--font-h1);
@@ -365,19 +436,7 @@ header {
   font-weight: 200;
 }
 
-.progressContainer {
-  height: 400px;
-  margin: 0 auto;
-  padding: 0 50px 0 50px;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-}
-
-.progressTile:hover {
-  opacity: 0.6;
-}
-.progress1 {
+/* .progress1 {
   color: #7b507c;
   background-color: #476a6f;
 }
@@ -392,7 +451,7 @@ header {
 .progress4 {
   color: #6ba2a0;
   background-color: #ffffff4d;
-}
+} */
 
 /* *******************ABOUT******************* */
 
@@ -583,14 +642,14 @@ header {
 }
 /* *******************FOOTER******************* */
 
-footer{
+footer {
   background-color: #00000026;
   color: #ffffff20;
-  width:100%;
+  width: 100%;
   height: 6rem;
   font-size: 1rem;
   position: absolute;
-  h2{
+  h2 {
     padding: 2rem;
     position: relative;
     font-weight: 200;
@@ -601,14 +660,13 @@ footer{
 /* *******************MEDIA QUERIES******************* */
 @media screen and (max-width: 550px) {
   header {
-    background-color: #233831;
+    background-color: transparent;
+    backdrop-filter: none;
     margin-bottom: 1rem;
   }
-
   .navBar {
     display: none;
   }
-
   .gradient {
     height: 200px;
     width: 90%;
@@ -616,7 +674,6 @@ footer{
   }
   .hero {
     max-height: 150px;
-
     h1 {
       letter-spacing: -0.1rem;
       margin-bottom: 0;
@@ -627,9 +684,6 @@ footer{
     margin-top: 1rem;
     position: static;
     font-weight: 100;
-
-    h3 {
-    }
   }
   .projectsContainer {
     a {
@@ -638,15 +692,12 @@ footer{
       margin-left: 0;
     }
   }
-
   .projectTitle {
     padding-bottom: 1rem;
   }
-
   .descriptionCover {
     display: none;
   }
-
   .projectTile:hover {
     .projectButtons {
       transform: translate(0rem, 0rem);
@@ -661,15 +712,12 @@ footer{
       display: none;
     }
   }
-
   .projectButtons {
     text-align: left;
   }
-
   .tile {
     height: 350px;
   }
-
   .progressHeader {
     color: var(--color-5);
     font-size: var(--font-h1);
@@ -678,22 +726,51 @@ footer{
     margin-bottom: 1rem;
     letter-spacing: -1px;
   }
-
   .progressSubHeader {
     color: var(--color-5);
     font-size: var(--font-h3);
-    text-align: center;
-    margin-bottom: 5rem;
-    font-weight: 200;
+    text-align: cen;
+    margin-bottom: 2rem;
   }
-
+  .progressContainer {
+    height: 650px;
+    width: 90%;
+    margin-top: 1rem;
+    gap: 50px;
+    display: block;
+    padding: 0;
+    a {
+      padding: 0.25rem 0.25rem;
+      margin-right: 0.25rem;
+      margin-left: 0;
+    }
+  }
+  .progressTitle {
+    padding-bottom: 1rem;
+  }
+  .progressTile {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+  .progressTile:hover {
+    .progressButtons {
+      transform: translate(0rem, 0rem);
+    }
+    img {
+      transform: translate(3rem, 4rem);
+    }
+    .progressDescription {
+      padding-top: 1.5rem;
+    }
+  }
+  .progressButtons {
+    text-align: left;
+  }
   .about {
     height: 800px;
-
     h1 {
       letter-spacing: -0.12rem;
     }
-
     p {
       font-weight: 300;
     }
@@ -705,13 +782,13 @@ footer{
       }
     }
   }
-
   .aboutTextWrapper {
     width: 100%;
     margin: 0 auto;
   }
-
   .contact {
+    height: 100vh;
+
     h1 {
       letter-spacing: -0.1rem;
       margin-top: 4rem;
@@ -722,30 +799,25 @@ footer{
       text-wrap: balance;
     }
   }
-
   .contactContainer {
     display: block;
   }
-
   .socialsContainer {
     height: 80px;
     width: 100%;
     flex-direction: row;
     padding-top: 5rem;
     padding-bottom: 5rem;
-
     img {
       height: 40px;
       width: 100px;
       position: static;
     }
   }
-
   .formContainer {
     width: 100%;
     position: relative;
   }
-
   .form {
     padding: 10% 6%;
     height: 550px;
