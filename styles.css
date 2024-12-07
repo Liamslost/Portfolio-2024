@@ -346,10 +346,7 @@ header {
   height: 80vh;
   aspect-ratio: 1;
   max-height: 650px;
-  /* max-width: 650px; */
   min-height: 200px;
-  /* min-width: 400px; */
-  /* width: 47%; */
   padding: 2rem;
   overflow: hidden;
 }
@@ -461,7 +458,6 @@ header {
     background-color: var(--color-6);
     border-top-right-radius: 4rem;
     border-bottom-right-radius: 4rem;
-    margin-bottom: 8rem;
     padding: 5rem;
     display: flex;
     justify-content: space-between;
@@ -493,46 +489,66 @@ header {
 }
 /* *******************CONTACT******************* */
 .contact {
-  height: 1000px;
+  height: 100vh;
   color: var(--color-5);
   text-align: center;
-  margin-bottom: 20rem;
-
   h1 {
     font-size: var(--font-h1);
     letter-spacing: -0.35rem;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+  h2{
+    font-weight: 200;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
   }
 }
+
 .contactContainer{
-  /* border: 4px solid chartreuse; */
   width:90%;
   margin: 0 auto;
-  height: 45%;
+  height: 55%;
   display: flex;
 }
 
 .socialsContainer{
-  border: 5px solid white;
   width: 50%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+
+  img{
+    height: 80px;
+    width: 200px;
+    position: absolute;
+    opacity: 0.3;
+    transform-origin: center;
+    transition: opacity 1s ease, transform 1.5s ease;
+  }
+
+  img:hover{
+    opacity: 0.6;
+    transform: scale(110%);
+    filter: invert(1);
+  }
 }
 
 .formContainer{
-  /* border: 5px solid white; */
   width: 50%;
   height:100%;
 }
 
 .form{
-  color: #ffffff37;
-  background-color:#476a6f ;
+  color: var(--color-6);
+  background-color:#334845 ;
   border-color: var(--color-5);
   border-radius: 30px;
   margin: 0 auto;
-  padding: 50px;
-  height: 100%;
+  padding: 10% 6%;
   width: 500px;
   text-align: center;
   
@@ -541,6 +557,8 @@ header {
 .formBtn{
   color: #0000007b;
   background-color: #ffffff3d;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 10px 30px;
   border: solid 3px #00000047;
   transition: all 0.3s ease;
@@ -549,35 +567,45 @@ header {
 .formBtn:hover{
   color: #ffffff3d;
   background-color: #00000047;
+ 
 }
 
 #email, #subject, #message{
-  background-color: #5c726f;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  background-color: #334845;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 1rem;
   outline: none;
-  margin: 10px;
+  margin: 1rem;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+#email::placeholder, #subject::placeholder, #message::placeholder{
+  color: #ffffff;
+  opacity: 0.15;
 }
 
 
 #subject, #email{
-  border: none;
-  height: 30px;
+  height: 2rem;
   width: 80%;
-  border-radius: 10px;
-  padding: 10px;
 }
 
 #message{
-  height: 150px;
+  height: 10rem;
   width: 90%;
-  border-radius: 10px;
-  padding: 10px;
+  resize: none;
 }
 
 #email:focus, #subject:focus, #message:focus{
-  border: 2px solid #22ff00;
+  border: 2px solid var(--color-6);
+}
 
+#my-form-status{
+font-size: 1.5rem;
+font-weight: 300;
 }
 
 
@@ -696,4 +724,47 @@ header {
 .aboutTextWrapper {
   width: 100%;
   margin: 0 auto;
+}
+
+.contact{
+  h1 {
+    letter-spacing: -0.1rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+  h2{
+    margin-bottom: 1rem;
+    text-wrap:balance;
+  }
+}
+
+.contactContainer{
+  display: block;
+  /* flex-direction: column-reverse; */
+}
+
+.socialsContainer{
+  height: 80px;
+  width: 100%;
+  flex-direction: row;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+
+  img{
+    height: 40px;
+    width: 100px;
+    position: static;
+  }
+}
+
+.formContainer{
+  width: 100%;
+  position: relative;
+}
+
+.form{
+  padding: 10% 6%;
+  height: 550px;
+  width: 330px;  
 }
