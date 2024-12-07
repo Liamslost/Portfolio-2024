@@ -24,6 +24,8 @@
   --color-8: #656d4a;
   --color-9: #414833;
   --color-10: #333d29;
+  --color-bg-dark: #233831;
+  --color-background-dark-low-opacity: #23383160;
   --font-h1: clamp(2rem, 0.5781rem + 5.4vw, 6.5rem);
   --font-h2: clamp(1.5rem, 0.5781rem + 4.2vw, 3.5rem);
   --font-h3: clamp(0.75rem, 0.5781rem + 4.2vw, 3rem);
@@ -34,50 +36,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #233831;
-  }
-
-  .hero {
-    color: var(--color-hero-text);
-    /* background: var(--color-hero-bg-dark); */
-  }
-  .projectsContainer {
-    /* background: var(--color-projects-bg-dark); */
-  }
-  .inProgress {
-  }
-}
-/* Light mode */
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #fbefcf;
-    background-size: 400% 200%;
-    animation: gradient 10s ease infinite;
-  }
-
-  .hero {
-    color: #233831;
-    /* background: var(--color-hero-bg-light); */
-  }
-
-  .projectsContainer {
-    /* background: var(--color-projects-bg-light); */
-  }
-  .inProgress {
-  }
-}
-
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* body {
-  background-color: #233831;
-} */
+body{
+  background-color: var(--color-background)
+}
 
 header {
   position: sticky;
@@ -89,7 +55,9 @@ header {
 
 .navScroll {
   backdrop-filter: blur(5px);
-  background-color: #a4ac8632;
+  background-color: var(--color-background-dark-low-opacity);
+  border: 4px solid #ffffff13;
+  
 }
 
 .navBar {
@@ -130,7 +98,7 @@ header {
 }
 
 .navBar li.active {
-  background-color: rgba(255, 255, 255, 0.308);
+  background-color: #ffffff4f;
   animation: pulse 2s ease;
   a {
     color: #1f1206;
@@ -138,12 +106,14 @@ header {
   }
 }
 
-.navBar li:hover {
+.navBar a:hover {
   background-color: #ffffff15;
-  a {
-    animation: wiggle 0.5s forwards;
-    color: rgba(255, 255, 255, 0.3);
-  }
+    li{
+      animation: wiggle 0.5s forwards;
+      color: rgba(255, 255, 255, 0.3);
+      
+    }
+  
 }
 @keyframes pulse {
   0% {
@@ -221,6 +191,7 @@ header {
 }
 
 .hero {
+  color: var(--color-hero-text);
   height: 30vh;
   width: 100%;
   text-align: center;
@@ -488,7 +459,7 @@ header {
 }
 /* *******************CONTACT******************* */
 .contact {
-  height: 100vh;
+  height: 125vh;
   color: var(--color-5);
   text-align: center;
   h1 {
@@ -609,6 +580,22 @@ header {
 #my-form-status {
   font-size: 1.5rem;
   font-weight: 300;
+}
+/* *******************FOOTER******************* */
+
+footer{
+  background-color: #00000026;
+  color: #ffffff20;
+  width:100%;
+  height: 6rem;
+  font-size: 1rem;
+  position: absolute;
+  h2{
+    padding: 2rem;
+    position: relative;
+    font-weight: 200;
+    letter-spacing: -1px;
+  }
 }
 
 /* *******************MEDIA QUERIES******************* */

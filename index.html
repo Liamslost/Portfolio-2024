@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
   <title>Liam O'Connell</title>
-  <link href="styles.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="styles-MQ-max-550.css" rel="stylesheet" />
+  <!-- <link href="styles-light-dark.css" rel="stylesheet" /> -->
   <link href="modern-normalize.css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="Images/three-leaf-2.svg" />
   <script src="script.js" defer></script>
@@ -10,12 +12,11 @@
 <header>
   <nav class="navBar">
     <ul>
-      <li class="active">
-        <a class=".navBtn" onclick="topFunction()" title="Home">Home</a>
-      </li>
-      <li><a href="#projects" title="Projects">Projects</a></li>
-      <li><a title="About" href="#about">About</a></li>
-      <li><a title="Contact" href="#contact">Contact</a></li>
+      <a class=".navBtn" onclick="topFunction()" title="Home"
+        ><li class="active">Home</li></a>
+      <a class=".navBtn" href="#projects" title="Projects"><li>Projects</li></a>
+      <a title="About" href="#about"><li>About</li></a>
+      <a title="Contact" href="#contact"><li>Contact</li></a>
     </ul>
   </nav>
 </header>
@@ -68,16 +69,28 @@
     <div id="contact"></div>
     <section class="contact">
       <h1>Contact</h1>
-      <h2>Come say hi on my socials  OR  e-mail me directly below</h2>
+      <h2>Come say hi on my socials OR e-mail me directly below</h2>
       <div class="contactContainer">
         <div class="socialsContainer">
-          <a href="https://www.linkedin.com/in/liam-o-connell-409243190/" target="_blank"><img src="Images/linkedin.svg" alt="linkedin logo" /> </a>
-          <a href="https://github.com/Liamslost" target="_blank"><img src="Images/GitHub_Logo_White.png" alt="github logo" /> </a>
-          <a href="https://www.figma.com/@liamoconnell" target="_blank"><img src="Images/figma-logo.svg" alt="figma logo" /> </a>
+          <a
+            href="https://www.linkedin.com/in/liam-o-connell-409243190/"
+            target="_blank"
+            ><img src="Images/linkedin.svg" alt="linkedin logo" />
+          </a>
+          <a href="https://github.com/Liamslost" target="_blank"
+            ><img src="Images/GitHub_Logo_White.png" alt="github logo" />
+          </a>
+          <a href="https://www.figma.com/@liamoconnell" target="_blank"
+            ><img src="Images/figma-logo.svg" alt="figma logo" />
+          </a>
         </div>
         <div class="formContainer">
           <div class="form">
-            <form action="https://formspree.io/f/mjkvdvkn" method="POST" id="my-form">
+            <form
+              action="https://formspree.io/f/mjkvdvkn"
+              method="POST"
+              id="my-form"
+            >
               <div>
                 <label for="email">Your email:</label>
                 <input
@@ -90,15 +103,19 @@
               <div>
                 <label for="subject">Subject:</label>
                 <input
-                id="subject"
-                type="text"
+                  id="subject"
+                  type="text"
                   name="subject"
                   placeholder="I'd like you to work for me..."
                 />
               </div>
               <div>
                 <label for="message">Your message:</label>
-                <textarea id="message" name="message" placeholder="No, really..."></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="No, really..."
+                ></textarea>
               </div>
               <button class="formBtn" type="submit">Send</button>
               <p id="my-form-status"></p>
@@ -108,6 +125,6 @@
       </div>
     </section>
 
-    <footer>&copy 2024 Liam O'Connell</footer>
+    <footer><h2>&copy 2024 Liam O'Connell</h2></footer>
   </div>
 </body>
