@@ -395,7 +395,7 @@ header {
 }
 
 .progressContainer {
-  height:400px;
+  height: 400px;
   margin: 0 auto;
   padding: 0 50px 0 50px;
   width: 90%;
@@ -468,7 +468,6 @@ header {
       display: flex;
       align-items: center;
       img {
-        /* margin: 0 auto; */
         max-height: 100%;
         max-width: 100%;
         clip-path: xywh(0 0 100% 100% round 3rem 0);
@@ -482,7 +481,7 @@ header {
   height: 100%;
   width: 60%;
   max-width: 1050px;
-  padding-left: clamp(0rem, 0.1rem + 4vw, 10rem );
+  padding-left: clamp(0rem, 0.1rem + 4vw, 10rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -499,29 +498,29 @@ header {
     margin-top: 8rem;
     margin-bottom: 3rem;
   }
-  h2{
+  h2 {
     font-weight: 200;
     margin-bottom: 4rem;
     letter-spacing: 2px;
   }
 }
 
-.contactContainer{
-  width:90%;
+.contactContainer {
+  width: 90%;
   margin: 0 auto;
   height: 55%;
   display: flex;
 }
 
-.socialsContainer{
+.socialsContainer {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
 
-  img{
+  img {
     height: 80px;
     width: 200px;
     position: absolute;
@@ -530,31 +529,30 @@ header {
     transition: opacity 1s ease, transform 1.5s ease;
   }
 
-  img:hover{
+  img:hover {
     opacity: 0.6;
     transform: scale(110%);
     filter: invert(1);
   }
 }
 
-.formContainer{
+.formContainer {
   width: 50%;
-  height:100%;
+  height: 100%;
 }
 
-.form{
+.form {
   color: var(--color-6);
-  background-color:#334845 ;
+  background-color: #334845;
   border-color: var(--color-5);
   border-radius: 30px;
   margin: 0 auto;
   padding: 10% 6%;
   width: 500px;
   text-align: center;
-  
 }
 
-.formBtn{
+.formBtn {
   color: #0000007b;
   background-color: #ffffff3d;
   margin-top: 1rem;
@@ -564,13 +562,14 @@ header {
   transition: all 0.3s ease;
 }
 
-.formBtn:hover{
+.formBtn:hover {
   color: #ffffff3d;
   background-color: #00000047;
- 
 }
 
-#email, #subject, #message{
+#email,
+#subject,
+#message {
   background-color: #334845;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -582,38 +581,38 @@ header {
   border-width: 2px;
 }
 
-#email::placeholder, #subject::placeholder, #message::placeholder{
+#email::placeholder,
+#subject::placeholder,
+#message::placeholder {
   color: #ffffff;
   opacity: 0.15;
 }
 
-
-#subject, #email{
+#subject,
+#email {
   height: 2rem;
   width: 80%;
 }
 
-#message{
+#message {
   height: 10rem;
   width: 90%;
   resize: none;
 }
 
-#email:focus, #subject:focus, #message:focus{
+#email:focus,
+#subject:focus,
+#message:focus {
   border: 2px solid var(--color-6);
 }
 
-#my-form-status{
-font-size: 1.5rem;
-font-weight: 300;
+#my-form-status {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
-
 
 /* *******************MEDIA QUERIES******************* */
 @media screen and (max-width: 550px) {
-  body {
-    /* background-color: yellow; */
-  }
   header {
     background-color: #233831;
     margin-bottom: 1rem;
@@ -719,52 +718,50 @@ font-weight: 300;
       }
     }
   }
-}
 
-.aboutTextWrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.contact{
-  h1 {
-    letter-spacing: -0.1rem;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
+  .aboutTextWrapper {
+    width: 100%;
+    margin: 0 auto;
   }
-  h2{
-    margin-bottom: 1rem;
-    text-wrap:balance;
+
+  .contact {
+    h1 {
+      letter-spacing: -0.1rem;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
   }
-}
 
-.contactContainer{
-  display: block;
-  /* flex-direction: column-reverse; */
-}
-
-.socialsContainer{
-  height: 80px;
-  width: 100%;
-  flex-direction: row;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-
-
-  img{
-    height: 40px;
-    width: 100px;
-    position: static;
+  .contactContainer {
+    display: block;
   }
-}
 
-.formContainer{
-  width: 100%;
-  position: relative;
-}
+  .socialsContainer {
+    height: 80px;
+    width: 100%;
+    flex-direction: row;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
-.form{
-  padding: 10% 6%;
-  height: 550px;
-  width: 330px;  
+    img {
+      height: 40px;
+      width: 100px;
+      position: static;
+    }
+  }
+
+  .formContainer {
+    width: 100%;
+    position: relative;
+  }
+
+  .form {
+    padding: 10% 6%;
+    height: 550px;
+    width: 330px;
+  }
 }
