@@ -4,10 +4,10 @@
   }
 
   .hero {
-    color: var(--color-hero-text);
-    background: var(--color-hero-bg-dark);
+    /* color: var(--color-hero-text);
+    background: var(--color-hero-bg-dark); */
 
-    background: var(--color-projects-bg-dark);
+    
   }
   .inProgress {
   }
@@ -15,14 +15,14 @@
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: #fbefcf;
+    /* background-color: #fbefcf;
     background-size: 400% 200%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite; */
   }
 
   .hero {
-    color: #233831;
-    background: var(--color-hero-bg-light);
+    /* color: #233831;
+    background: var(--color-hero-bg-light); */
   }
 
   .projectsContainer {
