@@ -16,7 +16,7 @@ const Projects = [
     h2: "JavaScript | CSS",
     description: "My first solo Javascript project made over 2 days. I enjoyed learning how to use the slider to change the displayed price as well as the annual/monthly price clicker changing the display.",
     image: "Images/traffic-calculator.png",
-    projectUrl: "",
+    projectUrl: "https://liamslost.github.io/priceCalculator/",
     githubUrl: "https://github.com/Liamslost/priceCalculator",
   },
   {
@@ -30,12 +30,12 @@ const Projects = [
   },
   {
     id: "4",
-    h1: "Collections",
-    h2: "PHP | SQL",
-    description:"This was my first solo PHP project. I was tasked to create an app that can add items to a collection. Within the timeframe I managed to get the app to display all items from the SQL database, add new items and delete exiting entries. Istarted working on filtering the results and would complete this with more time.",
-    image: "Images/Placeholder.png",
-    projectUrl: "",
-    githubUrl: "https://github.com/Liamslost/CollectionsApp",
+    h1: "Whack",
+    h2: "JavaScript | CSS",
+    description:"This project was made by myself and course-mates at IO academy. We were tasked with making a Whack-a-Mole style game for Halloween. I was responsible for most of the design and all of the SVG artwork along with the pre and post game modals with their functionality.",
+    image: "Images/Whack-a-Jacko.png",
+    projectUrl: "https://2024-blue-lobsters-whack-a-ghoul.dev.io-academy.uk/",
+    githubUrl: "https://github.com/Liamslost",
   },
 ];
 
