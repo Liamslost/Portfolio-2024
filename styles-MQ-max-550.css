@@ -56,7 +56,7 @@
     text-align: left;
   }
   .tile {
-    height: 350px;
+    max-height: 350px;
   }
   .progressHeader {
     text-align: center;
@@ -70,12 +70,6 @@
     margin-bottom: 2rem;
   }
   .progressContainer {
-    height: 650px;
-    width: 90%;
-    margin-top: 1rem;
-    gap: 50px;
-    display: block;
-    padding: 0;
     a {
       padding: 0.25rem 0.25rem;
       margin-right: 0.25rem;

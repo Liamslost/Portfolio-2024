@@ -43,10 +43,10 @@ const Progress = [
   {
     id: "1",
     h1: "Karen Ipsum",
-    h2: "TypeScript | Node.js",
+    h2: "React.ts | Node.ts",
     description: "This Karen-style Ipsum Lorem generator is intended purely for fun and creativity. It&#39;s a playful nod to internet culture and the quirks we all encounter in everyday life. It&#39;s not meant to target individuals (especially anyone named Karen, you're awesome!).",
     image: "Images/Placeholder.png",
-    githubUrl: "https://github.com/Liamslost",
+    githubUrl: "https://github.com/Liamslost/karen-ipsum-fe",
   },
   {
     id: "2",
