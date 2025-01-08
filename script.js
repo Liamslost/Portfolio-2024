@@ -7,7 +7,7 @@ const Projects = [
     h2: "React | Tailwind",
     description: "My first solo React/Tailwind project made over 3 evenings. If I were to spend more time on this I would include validation, unit tests and make the reset button clear the custom tip and restart the animation. I really enjoy working with React and Tailwind.",
     image: "Images/split.png",
-    projectUrl: "",
+    projectUrl: "https://liamslost.github.io/splitter/",
     githubUrl: "https://github.com/Liamslost/splitter",
   },
   {
