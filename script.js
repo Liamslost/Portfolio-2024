@@ -5,7 +5,7 @@ const Projects = [
     id: "5",
     h1: "Karen-Ipsum",
     h2: "React | Typescript",
-    description: "A Full-Stack web app for generating stylised Lorem Ipsum with a nod to modern internet culture. A work in progress but currently functional and live. Uses MongoDb and it's own domain.",
+    description: "A Responsive Full-Stack web app for generating stylised Lorem Ipsum with a nod to modern internet culture. A work in progress but currently functional and live. Uses MongoDb and it's own domain.",
     image: "Images/karenIpsum.png",
     projectUrl: "https://www.karenipsum.com",
     githubUrl: "https://github.com/Liamslost/karen-ipsum",
