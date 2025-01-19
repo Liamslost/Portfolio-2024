@@ -2,6 +2,15 @@
 
 const Projects = [
   {
+    id: "5",
+    h1: "Karen-Ipsum",
+    h2: "React | Typescript",
+    description: "A Full-Stack web app for generating stylised Lorem Ipsum with a nod to modern internet culture. A work in progress but currently functional and live. Uses MongoDb and it's own domain.",
+    image: "Images/karenIpsum.png",
+    projectUrl: "https://www.karenipsum.com",
+    githubUrl: "https://github.com/Liamslost/karen-ipsum",
+  },
+  {
     id: "1",
     h1: "Splitter",
     h2: "React | Tailwind",
@@ -42,11 +51,11 @@ const Projects = [
 const Progress = [
   {
     id: "1",
-    h1: "Karen Ipsum",
+    h1: "Keyboard Warrior",
     h2: "React.ts | Node.ts",
-    description: "This Karen-style Ipsum Lorem generator is intended purely for fun and creativity. It&#39;s a playful nod to internet culture and the quirks we all encounter in everyday life. It&#39;s not meant to target individuals (especially anyone named Karen, you're awesome!).",
-    image: "Images/Placeholder.png",
-    githubUrl: "https://github.com/Liamslost/karen-ipsum-fe",
+    description: "Think Guitar Hero but for improving touch typing. Scores extra points based on accuracy with score multipliers",
+    image: "Images/keyboard-warrior.png",
+    githubUrl: "https://github.com/Liamslost",
   },
   {
     id: "2",
