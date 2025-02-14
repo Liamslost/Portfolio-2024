@@ -118,7 +118,8 @@
     margin: 0 auto;
   }
   .contact {
-    height: 120vh;
+    height: fit-content;
+    padding-bottom: 2rem;
 
     h1 {
       letter-spacing: -0.1rem;
@@ -147,11 +148,16 @@
   }
   .formContainer {
     width: 100%;
-    position: relative;
+  
   }
   .form {
+    margin: 0 auto;
     padding: 10% 6%;
-    height: 550px;
-    width: 330px;
+    height: 500px;
+    width: 250px;
   }
+}
+
+footer {
+  display: block;
 }
