@@ -224,12 +224,12 @@ header {
 /* *******************PROJECTS******************* */
 
 .projectsContainer {
-  width: 95%;
   margin: 0 auto;
+  width: 95%;
+  gap: 50px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
 
   a {
     border: 3px #ffffff4d solid;
@@ -347,13 +347,12 @@ header {
 /* *******************PROGRESS******************* */
 
 .progressContainer {
-  height: 600px;
   margin: 0 auto;
-  padding: 0 50px 0 50px;
-  width: 90%;
+  width: 95%;
   gap: 50px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   a {
     border: 3px #ffffff4d solid;
     padding: 0.75rem 1.5rem;
